@@ -1,0 +1,407 @@
+%! Aldo Luna Bueno
+%! Alejandro Maycoll Escobar Mejia
+%! Carlos Alonso Aznarán Laos
+%! Luis Enrique Hernandez Pino
+%! Khalid Zaid Izquierdo Ayllon
+%! Carlos Daniel Malvaceda Canales
+%! Bruno Cipriano Arroyo
+%! Breiner Catalino Morales
+%! Universidad Nacional de Ingeniería
+%! Facultad de Ciencias
+%! Lima, Perú
+%! Uso:
+%! $ sudo pacman -Syu texlive-most zathura # dependencias, visor
+%! $ arara solution_primera
+%! $ zathura solution_primera.pdf
+%! Ver https://wiki.archlinux.org/title/TeX_Live
+% arara: clean: {
+% arara: --> extensions:
+% arara: --> ['aux','log','nav',
+% arara: --> 'out','snm','toc','pytxcode','pdf']
+% arara: --> }
+% arara: lualatex: {
+% arara: --> shell: yes,
+% arara: --> draft: yes,
+% arara: --> interaction: batchmode
+% arara: --> }
+% arara: biber
+% arara: lualatex: {
+% arara: --> shell: yes,
+% arara: --> draft: yes,
+% arara: --> interaction: batchmode
+% arara: --> }
+% arara: lualatex: {
+% arara: --> shell: yes,
+% arara: --> synctex: yes,
+% arara: --> interaction: batchmode
+% arara: --> }
+% arara: clean: {
+% arara: --> extensions:
+% arara: --> ['aux','log','nav',
+% arara: --> 'out','snm','toc','pytxcode']
+% arara: --> }
+\PassOptionsToPackage{svgnames}{xcolor}
+\documentclass[
+	spanish,
+	8pt,
+	utf8,
+	xcolor=table,
+	handout,
+	aspectratio=169,
+	professionalfonts,
+	% notheorems,
+	mathserif,
+	leqno,
+	% t
+]{beamer}
+\setbeamersize{text margin left=5pt,text margin right=5pt}
+\usepackage[spanish,es-sloppy]{babel}
+\spanishdatedel\decimalpoint
+\usepackage{mathtools}
+\usepackage{minted}
+\usepackage{enumerate}
+\usepackage{multicol}
+% \usepackage{pythontex}
+\usepackage[
+	citestyle=numeric,
+	style=apa,
+	backend=biber,
+	defernumbers=true,
+	sorting=ynt,
+	maxcitenames=4
+]{biblatex}
+\addbibresource{references.bib}
+
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+
+\newcounter{savedenum}
+\newcommand*{\saveenum}{\setcounter{savedenum}{\theenumi}}
+\newcommand*{\resume}{\setcounter{enumi}{\thesavedenum}}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{headline}{}
+
+% https://tex.stackexchange.com/questions/68080/beamer-bibliography-icon
+\setbeamertemplate{bibliography item}{%
+	\ifboolexpr{ test {\ifentrytype{book}} or test {\ifentrytype{mvbook}}
+		or test {\ifentrytype{collection}} or test {\ifentrytype{mvcollection}}
+		or test {\ifentrytype{reference}} or test {\ifentrytype{mvreference}} }
+	{\setbeamertemplate{bibliography item}[book]}
+	{\ifentrytype{online}
+		{\setbeamertemplate{bibliography item}[online]}
+		{\setbeamertemplate{bibliography item}[article]}}%
+	\usebeamertemplate{bibliography item}}
+
+\defbibenvironment{bibliography}
+{\list{}
+	{\settowidth{\labelwidth}{\usebeamertemplate{bibliography item}}%
+		\setlength{\leftmargin}{\labelwidth}%
+		\setlength{\labelsep}{\biblabelsep}%
+		\addtolength{\leftmargin}{\labelsep}%
+		\setlength{\itemsep}{\bibitemsep}%
+		\setlength{\parsep}{\bibparsep}}}
+{\endlist}
+{\item}
+
+\title{
+	\huge\sffamily
+	Primera Práctica Dirigida\quad Grupo N$^{\circ}$~1
+}
+
+\subtitle{
+	\large\scshape
+	Análisis y Modelamiento Numérico I\quad CM4F1 B\\[.5\baselineskip]
+		\normalsize\normalfont
+		Profesor Ángel Enrique Ramírez Gutiérrez.
+}
+
+\author{
+	Aldo Luna Bueno\quad\and\quad
+	Alejandro Escobar Mejia\quad\and\quad
+	Carlos Aznarán Laos\quad\and\quad
+	Luis Hernandez Pino\and \\[\baselineskip]
+  Khalid Izquierdo Ayllon\quad\and\quad
+  Carlos Malvaceda Canales\quad\and\quad
+  Bruno Cipriano Arroyo\quad\and\quad
+  Breiner Catalino Morales
+}
+
+\institute{\large
+	Facultad de Ciencias \and
+	Universidad Nacional de Ingeniería
+}
+\date{5 de abril del 2023}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+
+	\begin{enumerate}\setcounter{enumi}{1}
+		\item
+
+		      Si $x=0.43257143$ e $y=0.43257824$.
+
+		      \begin{enumerate}[a)]
+			      \item\label{q:2.a}
+
+			      Use aritmética de redondeo a cinco cifras para calcular
+			      \begin{math}
+				      \operatorname{fl}\left(x\right)
+			      \end{math}
+			      y
+			      \begin{math}
+				      \operatorname{fl}\left(y\right)
+			      \end{math}.
+
+			      \item\label{q:2.b}
+
+			      Calcular los errores relativos y absolutos.
+
+			      \item\label{q:2.c}
+
+			      Calcular $x+y$, $x-y$, $xy$ y $\frac{x}{y}$.
+
+			      \item\label{q:2.d}
+
+			      Calcular los errores relativos para las operaciones
+			      realizadas en el inciso anterior.
+		      \end{enumerate}
+	\end{enumerate}
+
+	\begin{solution}
+		.
+	\end{solution}
+\end{frame}
+
+\begin{frame}
+	\begin{enumerate}\setcounter{enumi}{4}
+		\item
+
+		      Determine el valor decimal, la suma y la diferencia de los
+		      números binarios $A=11100111$ y $B=10111111$, suponiendo
+		      que:
+
+		      \begin{multicols}{2}
+
+			      \begin{enumerate}[a)]
+				      \item
+
+				            Ambos están representados en magnitud y signo.
+
+				      \item
+
+				            Ambos están representados en complemento a 2.
+			      \end{enumerate}
+		      \end{multicols}
+	\end{enumerate}
+
+	\begin{solution}
+		.
+	\end{solution}
+\end{frame}
+
+% \begin{frame}
+% 	\begin{enumerate}\setcounter{enumi}{19}
+% 		\item
+
+% 		      Probar que el cardinal del sistema de números de punto
+% 		      flotante normalizado
+% 		      $\mathbb{F}\left(\beta, t, L, U\right)$ es
+
+% 		      \begin{equation*}
+% 			      \operatorname{card}\left(\mathbb{F}\right)=
+% 			      2\left(\beta-1\right)\beta^{t-1}\left(U-L+1\right)+1.
+% 		      \end{equation*}
+
+% 		      En particular, para $\mathbb{F}\left(10,3,-2,3\right)$,
+% 		      calcular $x_{\min}$, $x_{\max}$, $\epsilon_{M}$.
+
+% 	\end{enumerate}
+% \end{frame}
+
+% \begin{frame}
+% 	\begin{definition}[Representación de
+% 			punto flotante]
+% 		Un número real no nulo $x$, tiene como
+% 		\alert{representación de punto flotante} a
+% 		\begin{equation*}
+% 			x=
+% 			{\left(-1\right)}^{s}\cdot
+% 			\left(0.a_{1}\ldots a_{t}\right)\cdot
+% 			{\beta}^{e}=
+% 			{\left(-1\right)}^{s}\cdot
+% 			m\cdot{\beta}^{e-t},
+% 		\end{equation*}
+% 		donde $t\in\mathbb{N}$ es el número de dígitos significativos
+% 		permitidos $a_{i}$ (con $0\leq a_{i}\leq\beta-1$),
+% 		$m=a_{1}\ldots a_{t}$ es un número entero llamado mantisa tal
+% 		que $0\leq m\leq{\beta}^{t}-1$ y $e$ es número entero
+% 		llamado exponente, donde $0>L\leq e\leq U>0$.
+% 	\end{definition}
+
+% 	\begin{definition}[El conjunto de los números punto flotante]
+% 		El conjunto de los números punto flotante con $t$ dígitos
+% 		significativos, base $\beta\geq2$, $0\leq a_{i}\leq\beta-1$ y
+% 		$L\leq e\leq U$.
+% 		\begin{equation*}
+% 			\mathbb{F}\left(\beta, t, L, U\right)=
+% 			\left\{0\right\}\cup
+% 			\left\{
+% 			x\in\mathbb{R}:x=
+% 			{\left(-1\right)}^{s}
+% 			\beta^{e}
+% 			\sum_{i=1}^{t}a_{i}\beta^{-i}
+% 			\right\}.
+% 		\end{equation*}
+% 	\end{definition}
+% 	Con el fin de tener una representación numérica única, asumimos
+% 	que $a_{i}\neq0$ y $m\geq{\beta}^{t-1}$.
+% 	$a_{1}$ es el dígito significativo principal, $a_{t}$ es el
+% 	último dígito significativo y la
+% 	representación de $x$ es llamado \alert{normalizado}.
+% \end{frame}
+
+% \begin{frame}
+% 	\begin{solution}
+% 		Sea el sistema de punto flotante normalizado, un elemento de
+% 		$\mathbb{F}\left(\beta, t, L, U\right)$ es de la forma
+% 		\begin{equation*}
+% 			x=
+% 			{\left(-1\right)}^{s}\cdot
+% 			\left(0.a_{1}\ldots a_{t}\right)\cdot
+% 			{\beta}^{e}.
+% 		\end{equation*}
+
+% 		Notamos que
+
+% 		\begin{itemize}
+% 			\item
+
+% 			      El signo $s\in\left\{0,1\right\}$ toma dos valores.
+
+% 			\item
+
+% 			      Los dígitos significativos
+% 			      $a_{i}\in\left\{0,\ldots,\beta-1\right\}$ con
+% 			      $a_{1}\neq 0$ e $i\in\left\{1,\ldots,t\right\}$.
+
+% 			\item
+
+% 			      El exponente $e\in\left\{L,\ldots,U\right\}$ toma $U-L+1$ valores.
+% 		\end{itemize}
+
+% 		Por el principio de la multiplicación, la cantidad total de
+% 		términos son
+% 		\begin{equation*}
+% 			\operatorname{card}\left(\mathbb{F}\right)=
+% 			2\times
+% 			\left(\beta-1\right)\times
+% 			\beta^{t-1}\times
+% 			\left(U-L+1\right)+
+% 			\operatorname{card}\left(\left\{0\right\}\right)=
+% 			2\left(\beta-1\right)\beta^{t-1}\left(U-L+1\right)+
+% 			1.
+% 		\end{equation*}
+
+% 		Por otro lado, las cotas inferior y superior del valor absoluto
+% 		de $x$ son
+% 		\begin{align*}
+% 			x_{\min} & =
+% 			{\left(-1\right)}^{0}\cdot
+% 			\left(0.1\ldots 0\right)\cdot
+% 			{\beta}^{L}=
+% 			1\cdot
+% 			{\beta}^{-1}\cdot
+% 			{\beta}^{L}=
+% 			{\beta}^{-1+L}=
+% 			\beta^{L-1}\leq
+% 			\left|x\right|. \\
+% 			x_{\max} & =
+% 			{\left(-1\right)}^{0}\cdot
+% 			\left(0.\beta-1\ldots \beta-1\right)\cdot
+% 			{\beta}^{U}=
+% 			1\cdot
+% 			\sum_{i=1}^{t}
+% 			\left(\beta-1\right)
+% 			\beta^{-i}\cdot
+% 			{\beta}^{U}=
+% 			\left(\beta-1\right)
+% 			{\beta}^{U}
+% 			\sum_{i=1}^{t}
+% 			\beta^{-i}.     \\
+% 			x_{\max} & =
+% 			\left(\beta-1\right)
+% 			{\beta}^{U}
+% 			\left(\frac{1-\beta^{-t}}{\beta-1}\right)
+% 			=\beta^{U}\left(1-\beta^{-t}\right)\geq
+% 			\left|x\right|.
+% 		\end{align*}
+% 	\end{solution}
+% \end{frame}
+
+% \begin{frame}
+% 	\begin{solution}
+% 		Consideremos el conjunto de punto flotante normalizado
+% 		$\mathbb{F}\left(10,3,-2,3\right)$, aplicando la fórmula deducida
+% 		obtenemos que el
+% 		\begin{equation*}
+% 			\operatorname{card}
+% 			\left(
+% 			\mathbb{F}
+% 			\left(\beta=10,t=3,L=-2,U=3\right)
+% 			\right)=2\times
+% 			\left(10-1\right)\times
+% 			10^{3-1}\times
+% 			\left(3-\left(-2\right)+1\right)+
+% 			1=
+% 			2\times 9\times 10^{2}\times 6 + 1
+% 			=10801.
+% 		\end{equation*}
+
+% 		También,
+% 		\begin{align*}
+% 			x_{\min}     & =
+% 			\beta^{L-1}=
+% 			10^{-2-1}=
+% 			10^{-3}.         \\
+% 			x_{\max}     & =
+% 			\beta^{U}\left(1-\beta^{-t}\right)=
+% 			10^{3}\left(1-10^{-3}\right)=
+% 			999.             \\
+% 			\epsilon_{M} & =
+% 			\beta^{1-U}=
+% 			10^{1-3}=10^{-2}.
+% 		\end{align*}
+% 	\end{solution}
+% \end{frame}
+
+% \begin{frame}\transblindsvertical
+% 	\frametitle{Referencias}
+% 	%------------------------------------------------------------ 1
+% 	\only<1>{
+% 		\begin{itemize}
+% 			\item Libros
+% 			      \nocite{*}
+% 			      \printbibliography[heading=none,keyword=book]
+% 		\end{itemize}
+% 	}
+% 	%------------------------------------------------------------ 2
+% 	\only<2>{
+% 		\begin{itemize}
+% 			\item Artículos científicos
+% 			      \printbibliography[heading=none,keyword=paper]
+% 		\end{itemize}
+% 	}
+% 	%------------------------------------------------------------ 3
+% 	\only<3>{
+% 		\begin{itemize}
+% 			\item Sitios web
+% 			      \printbibliography[heading=none,keyword=online]
+% 		\end{itemize}
+% 	}
+% \end{frame}
+
+\end{document}
