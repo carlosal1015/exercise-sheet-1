@@ -203,205 +203,185 @@
 	\end{solution}
 \end{frame}
 
-% \begin{frame}
-% 	\begin{enumerate}\setcounter{enumi}{19}
-% 		\item
+\begin{frame}
+	\begin{enumerate}\setcounter{enumi}{10}
+		\item
 
-% 		      Probar que el cardinal del sistema de números de punto
-% 		      flotante normalizado
-% 		      $\mathbb{F}\left(\beta, t, L, U\right)$ es
+		      Un computador que usa redondeo y punto flotante con $10$
+		      bits posee la siguiente estructura:
+		      el primer bit guarda información sobre el signo, los 3 bits
+		      siguientes guardan información sobre el exponente
+		      (desplazado $3$ unidades) y los $6$ bits restantes guardan
+		      los dígitos de la mantisa (a partir del segundo porque el
+		      primero siempre es uno y con redondeo en el séptimo dígito
+		      si esto es necesario).
+		      Por ejemplo, el registro $1110001000$ representa al número
+		      ${\left(-1\right)}^{1}\times 0.1001000\times 2^{6-3}$.
+		      ¿Cómo almacena este computador al número $9.123$?
+		      Calcule el error relativo que se comete al realizar tal
+		      representación?
+	\end{enumerate}
 
-% 		      \begin{equation*}
-% 			      \operatorname{card}\left(\mathbb{F}\right)=
-% 			      2\left(\beta-1\right)\beta^{t-1}\left(U-L+1\right)+1.
-% 		      \end{equation*}
+	\begin{solution}
+		.
+	\end{solution}
+\end{frame}
 
-% 		      En particular, para $\mathbb{F}\left(10,3,-2,3\right)$,
-% 		      calcular $x_{\min}$, $x_{\max}$, $\epsilon_{M}$.
+\begin{frame}
+	\begin{enumerate}\setcounter{enumi}{13}
+		\item
 
-% 	\end{enumerate}
-% \end{frame}
+		      Asuma que se necesita calcular
+		      \begin{math}
+			      A=
+			      \sqrt{10^{14}+\frac{2}{3}}-10^{7}
+		      \end{math}
+		      en un computador que usa aritmética de punto flotante con
+		      una exactitud de 15 dígitos.
 
-% \begin{frame}
-% 	\begin{definition}[Representación de
-% 			punto flotante]
-% 		Un número real no nulo $x$, tiene como
-% 		\alert{representación de punto flotante} a
-% 		\begin{equation*}
-% 			x=
-% 			{\left(-1\right)}^{s}\cdot
-% 			\left(0.a_{1}\ldots a_{t}\right)\cdot
-% 			{\beta}^{e}=
-% 			{\left(-1\right)}^{s}\cdot
-% 			m\cdot{\beta}^{e-t},
-% 		\end{equation*}
-% 		donde $t\in\mathbb{N}$ es el número de dígitos significativos
-% 		permitidos $a_{i}$ (con $0\leq a_{i}\leq\beta-1$),
-% 		$m=a_{1}\ldots a_{t}$ es un número entero llamado mantisa tal
-% 		que $0\leq m\leq{\beta}^{t}-1$ y $e$ es número entero
-% 		llamado exponente, donde $0>L\leq e\leq U>0$.
-% 	\end{definition}
+		      \begin{enumerate}[a)]
+			      \item\label{q:14.a}
 
-% 	\begin{definition}[El conjunto de los números punto flotante]
-% 		El conjunto de los números punto flotante con $t$ dígitos
-% 		significativos, base $\beta\geq2$, $0\leq a_{i}\leq\beta-1$ y
-% 		$L\leq e\leq U$.
-% 		\begin{equation*}
-% 			\mathbb{F}\left(\beta, t, L, U\right)=
-% 			\left\{0\right\}\cup
-% 			\left\{
-% 			x\in\mathbb{R}:x=
-% 			{\left(-1\right)}^{s}
-% 			\beta^{e}
-% 			\sum_{i=1}^{t}a_{i}\beta^{-i}
-% 			\right\}.
-% 		\end{equation*}
-% 	\end{definition}
-% 	Con el fin de tener una representación numérica única, asumimos
-% 	que $a_{i}\neq0$ y $m\geq{\beta}^{t-1}$.
-% 	$a_{1}$ es el dígito significativo principal, $a_{t}$ es el
-% 	último dígito significativo y la
-% 	representación de $x$ es llamado \alert{normalizado}.
-% \end{frame}
+			      Explicar si esta fórmula producirá información sin
+			      pérdida de dígitos significativos.
+			      ¿Cuál es el valor?
 
-% \begin{frame}
-% 	\begin{solution}
-% 		Sea el sistema de punto flotante normalizado, un elemento de
-% 		$\mathbb{F}\left(\beta, t, L, U\right)$ es de la forma
-% 		\begin{equation*}
-% 			x=
-% 			{\left(-1\right)}^{s}\cdot
-% 			\left(0.a_{1}\ldots a_{t}\right)\cdot
-% 			{\beta}^{e}.
-% 		\end{equation*}
+			      \item\label{q:14.b}
 
-% 		Notamos que
+			      Reescribir la fórmula en una forma alternativa de
+			      modo que un cálculo más exacto sea posible.
+			      Compare con lo obtenido en la parte~\eqref{q:14.a}.
+		      \end{enumerate}
+	\end{enumerate}
 
-% 		\begin{itemize}
-% 			\item
+	\begin{solution}
+		.
+	\end{solution}
+\end{frame}
 
-% 			      El signo $s\in\left\{0,1\right\}$ toma dos valores.
+\begin{frame}
+	\begin{enumerate}\setcounter{enumi}{15}
+		\item
 
-% 			\item
+		      Escribir en base dos los siguientes números dados en base $10$.
 
-% 			      Los dígitos significativos
-% 			      $a_{i}\in\left\{0,\ldots,\beta-1\right\}$ con
-% 			      $a_{1}\neq 0$ e $i\in\left\{1,\ldots,t\right\}$.
 
-% 			\item
+		      \begin{enumerate}[a)]
+			      \item
 
-% 			      El exponente $e\in\left\{L,\ldots,U\right\}$ toma $U-L+1$ valores.
-% 		\end{itemize}
+			            $2324.6$.
+		      \end{enumerate}
+	\end{enumerate}
 
-% 		Por el principio de la multiplicación, la cantidad total de
-% 		términos son
-% 		\begin{equation*}
-% 			\operatorname{card}\left(\mathbb{F}\right)=
-% 			2\times
-% 			\left(\beta-1\right)\times
-% 			\beta^{t-1}\times
-% 			\left(U-L+1\right)+
-% 			\operatorname{card}\left(\left\{0\right\}\right)=
-% 			2\left(\beta-1\right)\beta^{t-1}\left(U-L+1\right)+
-% 			1.
-% 		\end{equation*}
+	\begin{solution}
+		.
+	\end{solution}
+\end{frame}
 
-% 		Por otro lado, las cotas inferior y superior del valor absoluto
-% 		de $x$ son
-% 		\begin{align*}
-% 			x_{\min} & =
-% 			{\left(-1\right)}^{0}\cdot
-% 			\left(0.1\ldots 0\right)\cdot
-% 			{\beta}^{L}=
-% 			1\cdot
-% 			{\beta}^{-1}\cdot
-% 			{\beta}^{L}=
-% 			{\beta}^{-1+L}=
-% 			\beta^{L-1}\leq
-% 			\left|x\right|. \\
-% 			x_{\max} & =
-% 			{\left(-1\right)}^{0}\cdot
-% 			\left(0.\beta-1\ldots \beta-1\right)\cdot
-% 			{\beta}^{U}=
-% 			1\cdot
-% 			\sum_{i=1}^{t}
-% 			\left(\beta-1\right)
-% 			\beta^{-i}\cdot
-% 			{\beta}^{U}=
-% 			\left(\beta-1\right)
-% 			{\beta}^{U}
-% 			\sum_{i=1}^{t}
-% 			\beta^{-i}.     \\
-% 			x_{\max} & =
-% 			\left(\beta-1\right)
-% 			{\beta}^{U}
-% 			\left(\frac{1-\beta^{-t}}{\beta-1}\right)
-% 			=\beta^{U}\left(1-\beta^{-t}\right)\geq
-% 			\left|x\right|.
-% 		\end{align*}
-% 	\end{solution}
-% \end{frame}
+\begin{frame}
+	\begin{enumerate}\setcounter{enumi}{16}
+		\item
 
-% \begin{frame}
-% 	\begin{solution}
-% 		Consideremos el conjunto de punto flotante normalizado
-% 		$\mathbb{F}\left(10,3,-2,3\right)$, aplicando la fórmula deducida
-% 		obtenemos que el
-% 		\begin{equation*}
-% 			\operatorname{card}
-% 			\left(
-% 			\mathbb{F}
-% 			\left(\beta=10,t=3,L=-2,U=3\right)
-% 			\right)=2\times
-% 			\left(10-1\right)\times
-% 			10^{3-1}\times
-% 			\left(3-\left(-2\right)+1\right)+
-% 			1=
-% 			2\times 9\times 10^{2}\times 6 + 1
-% 			=10801.
-% 		\end{equation*}
+		      Si tenemos $\beta=10, N=11$ y $k=6$.
+		      Entonces, disponemos de $k=6$ dígitos para la parte
+		      fraccionaria y $N-k-1$ dígitos para la parte entera.
+		      Escribe la representación de los siguientes números:
 
-% 		También,
-% 		\begin{align*}
-% 			x_{\min}     & =
-% 			\beta^{L-1}=
-% 			10^{-2-1}=
-% 			10^{-3}.         \\
-% 			x_{\max}     & =
-% 			\beta^{U}\left(1-\beta^{-t}\right)=
-% 			10^{3}\left(1-10^{-3}\right)=
-% 			999.             \\
-% 			\epsilon_{M} & =
-% 			\beta^{1-U}=
-% 			10^{1-3}=10^{-2}.
-% 		\end{align*}
-% 	\end{solution}
-% \end{frame}
+		      \begin{enumerate}[b)]
+			      \item
 
-% \begin{frame}\transblindsvertical
-% 	\frametitle{Referencias}
-% 	%------------------------------------------------------------ 1
-% 	\only<1>{
-% 		\begin{itemize}
-% 			\item Libros
-% 			      \nocite{*}
-% 			      \printbibliography[heading=none,keyword=book]
-% 		\end{itemize}
-% 	}
-% 	%------------------------------------------------------------ 2
-% 	\only<2>{
-% 		\begin{itemize}
-% 			\item Artículos científicos
-% 			      \printbibliography[heading=none,keyword=paper]
-% 		\end{itemize}
-% 	}
-% 	%------------------------------------------------------------ 3
-% 	\only<3>{
-% 		\begin{itemize}
-% 			\item Sitios web
-% 			      \printbibliography[heading=none,keyword=online]
-% 		\end{itemize}
-% 	}
-% \end{frame}
+			            $40.9561$.
+		      \end{enumerate}
+	\end{enumerate}
+
+	\begin{solution}
+		.
+	\end{solution}
+\end{frame}
+
+\begin{frame}
+	\begin{enumerate}\setcounter{enumi}{18}
+		\item
+
+		      Realice las operaciones aritmética con enteros complemento
+		      a dos con una longitud de palabra de $N=4$ bits para las
+		      siguientes operaciones:
+
+		      \begin{enumerate}[b)]
+			      \item
+
+			            $1100+0100$.
+		      \end{enumerate}
+	\end{enumerate}
+
+	\begin{solution}
+		.
+	\end{solution}
+\end{frame}
+
+\begin{frame}
+	\begin{enumerate}\setcounter{enumi}{20}
+		\item
+
+		      Sean $a=0.000063381158, b=73.688329$ y $c=-73.687711$.
+		      Determine la aritmética de punto flotante para:
+
+		      \begin{enumerate}[b)]
+			      \item
+
+			            $\left(a+b\right)+c$.
+		      \end{enumerate}
+	\end{enumerate}
+
+	\begin{solution}
+		.
+	\end{solution}
+\end{frame}
+
+\begin{frame}
+	\begin{enumerate}\setcounter{enumi}{23}
+		\item
+
+		      Si tenemos $\beta=2$, $t=3$, $L=-2$ y $U=2$, determine los
+		      números de máquina que contiene dicho intervalo y además
+		      determine:
+
+		      \begin{enumerate}[b)]
+			      \item
+
+			            $\frac{24}{32}\oplus\frac{7}{32}$.
+		      \end{enumerate}
+	\end{enumerate}
+
+	\begin{solution}
+		.
+	\end{solution}
+\end{frame}
+
+\begin{frame}\transblindsvertical
+	\frametitle{Referencias}
+	%------------------------------------------------------------ 1
+	\only<1>{
+		\begin{itemize}
+			\item Libros
+			      \nocite{*}
+			      \printbibliography[heading=none,keyword=book]
+		\end{itemize}
+	}
+	%------------------------------------------------------------ 2
+	\only<2>{
+		\begin{itemize}
+			\item Artículos científicos
+			      \printbibliography[heading=none,keyword=paper]
+		\end{itemize}
+	}
+	%------------------------------------------------------------ 3
+	\only<3>{
+		\begin{itemize}
+			\item Sitios web
+			      \printbibliography[heading=none,keyword=online]
+		\end{itemize}
+	}
+\end{frame}
 
 \end{document}
