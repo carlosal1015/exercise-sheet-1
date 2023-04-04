@@ -1,4 +1,4 @@
-\section{Pregunta N$^{\circ}$24a\qquad Breiner Catalino Morales}
+\section{Pregunta N$^{\circ}$24a\qquad Carlos Aznarán Laos}
 
 \begin{frame}
 	\begin{enumerate}\setcounter{enumi}{23}
@@ -107,8 +107,8 @@
 				{\left(0.100\right)}_{2}\times 2^{-2}=\alert{\dfrac{1}{8}}
 				 & {\left(0.100\right)}_{2}\times 2^{-1}=\dfrac{1}{4}
 				 & {\left(0.100\right)}_{2}\times 2^{0}=\dfrac{1}{2}
-				 & {\left(0.100\right)}_{2}\times 2^{1}=\dfrac{1}{1}
-				 & {\left(0.100\right)}_{2}\times 2^{2}=\dfrac{2}{1}
+				 & {\left(0.100\right)}_{2}\times 2^{1}=1
+				 & {\left(0.100\right)}_{2}\times 2^{2}=2
 				\\
 				\hline
 				{\left(0.101\right)}_{2}\times 2^{-2}=\dfrac{5}{32}
@@ -122,7 +122,7 @@
 				 & {\left(0.110\right)}_{2}\times 2^{-1}=\dfrac{3}{8}
 				 & {\left(0.110\right)}_{2}\times 2^{0}=\dfrac{3}{4}
 				 & {\left(0.110\right)}_{2}\times 2^{1}=\dfrac{3}{2}
-				 & {\left(0.110\right)}_{2}\times 2^{2}=\dfrac{3}{1}
+				 & {\left(0.110\right)}_{2}\times 2^{2}=3
 				\\
 				\hline
 				{\left(0.111\right)}_{2}\times 2^{-2}=\dfrac{7}{32}
@@ -152,19 +152,40 @@
 		\left(
 			\dfrac{7}{32}
 			\right)
-		\right) \\
+		\right)            \\
 		 & =
 		\operatorname{fl}
 		\left(
-		\dfrac{24}{32}
+		\operatorname{fl}
+		\left(
+			\alert{\dfrac{3}{4}}
+			\right)+
+		\operatorname{fl}
+		\left(
+			\alert{\dfrac{7}{32}}
+			\right)
+		\right)\quad
+		\text{
+			, pero
+			$\dfrac{3}{4},\dfrac{7}{32}\in\mathbb{F}\left(\beta=2,t=3,L=-2,U=2\right)$
+		}
+		\\
+		 & =
+		\operatorname{fl}
+		\left(
+		\alert{\dfrac{3}{4}}
 		+
-		\dfrac{7}{32}
-		\right) \\
+		\alert{\dfrac{7}{32}}
+		\right)            \\
 		 & =
 		\operatorname{fl}
 		\left(
 		\dfrac{31}{32}
-		\right) \\
+		\right)\text{
+			, pero
+			$\dfrac{31}{32}\not\in\mathbb{F}\left(\beta=2,t=3,L=-2,U=2\right)$
+		}                  \\
+		 & =\dfrac{32}{32} \\
 		 & =1.
 	\end{align*}
 \end{frame}
