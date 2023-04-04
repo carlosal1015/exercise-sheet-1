@@ -1,80 +1,308 @@
 \section{Pregunta N$^{\circ}$2\qquad Aldo Luna Bueno}
 
 \begin{frame}
+	\begin{definition}[Redondeo]
+		Dado un $x\in\mathbb{R}$ en la notación posicional normalizada,
+		definimos la función de redondeo a $t$ dígitos como
+		\begin{equation*}
+			\operatorname{fl}\left(x\right)=
+			{\left(-1\right)}^{s}
+			\left(
+			0.a_{1}\dotsc,\widetilde{a}_{t}
+			\right)\cdot
+			\beta^{e},\quad
+			\widetilde{a}_{t}=
+			\begin{cases}
+				\begin{aligned}
+					a_{t},   & \text{ si }a_{t+1}\leq\frac{\beta}{2}, \\[\baselineskip]
+					a_{t}+1, & \text{ si }a_{t+1}\geq\frac{\beta}{2}.
+				\end{aligned}
+			\end{cases}
+		\end{equation*}
+	\end{definition}
+
+	\begin{definition}[Error absoluto y el error relativo]
+		Para cualquier $x\in\mathbb{R}$, definimos
+		\begin{equation*}
+			\operatorname{EA}\left(x\right)=
+			\left|
+			x-
+			\operatorname{fl}\left(x\right)\right|,\qquad
+			\operatorname{ER}\left(x\right)=
+			\frac{
+				\left|
+				x-
+				\operatorname{fl}\left(x\right)\right|
+			}{
+				\left|
+				x
+				\right|
+			}.
+		\end{equation*}
+	\end{definition}
+
+	\begin{definition}[Operaciones aritméticas en punto flotante]
+		Para cualquier $x,y\in\mathbb{R}$ definimos las operaciones de
+		suma, resta, producto y división en $\mathbb{F}$ como
+		\begin{equation*}
+			\begin{aligned}[c]
+				x+y & \coloneqq
+				\operatorname{fl}
+				\left(
+				\operatorname{fl}\left(x\right)+
+				\operatorname{fl}\left(y\right)
+				\right)         \\
+				x-y & \coloneqq
+				\operatorname{fl}
+				\left(
+				\operatorname{fl}\left(x\right)-
+				\operatorname{fl}\left(y\right)
+				\right)
+			\end{aligned}
+			\qquad\qquad
+			\begin{aligned}[c]
+				x\times y   & \coloneqq
+				\operatorname{fl}
+				\left(
+				\operatorname{fl}\left(x\right)\times
+				\operatorname{fl}\left(y\right)
+				\right)                 \\
+				\frac{x}{y} & \coloneqq
+				\operatorname{fl}
+				\left(
+				\frac{\operatorname{fl}\left(x\right)}{\operatorname{fl}\left(y\right)}
+				\right)
+			\end{aligned}
+		\end{equation*}
+	\end{definition}
+\end{frame}
+
+\begin{frame}
 
 	\begin{enumerate}\setcounter{enumi}{1}
 		\item
 
 		      Si $x=0.43257143$ e $y=0.43257824$.
+		      \begin{multicols}{2}
+			      \begin{enumerate}[a)]
+				      \item\label{q:2.a}
 
-		      \begin{enumerate}[a)]
-			      \item\label{q:2.a}
+				      Calcule
+				      \begin{math}
+					      \operatorname{fl}\left(x\right)
+				      \end{math}
+				      y
+				      \begin{math}
+					      \operatorname{fl}\left(y\right)
+				      \end{math}
+				      con redondeo a $5$ cifras.
 
-			      Use aritmética de redondeo a cinco cifras para calcular
-			      \begin{math}
-				      \operatorname{fl}\left(x\right)
-			      \end{math}
-			      y
-			      \begin{math}
-				      \operatorname{fl}\left(y\right)
-			      \end{math}.
+				      \item\label{q:2.b}
 
-			      \item\label{q:2.b}
+				      Calcule sus errores relativos y absolutos.
 
-			      Calcular los errores relativos y absolutos.
+				      \item\label{q:2.c}
 
-			      \item\label{q:2.c}
+				      Calcule $x+y$, $x-y$, $x\times y$ y $\dfrac{x}{y}$.
 
-			      Calcular $x+y$, $x-y$, $xy$ y $\frac{x}{y}$.
+				      \item\label{q:2.d}
 
-			      \item\label{q:2.d}
-
-			      Calcular los errores relativos para las operaciones
-			      realizadas en el inciso anterior.
-		      \end{enumerate}
+				      Calcule los errores relativos de~\eqref{q:2.c}.
+			      \end{enumerate}
+		      \end{multicols}
 	\end{enumerate}
-
 	\begin{solution}
-		\begin{definition}[Redondeo]
-			Dado un $x\in\mathbb{R}$ en la notación posicional normalizada
-			\begin{equation*}
-				\operatorname{fl}\left(x\right)=
-				{\left(-1\right)}^{s}
-				\left(
-				0.a_{1}\dotsc,\widetilde{a}_{t}
-				\right)\cdot
-				\beta^{e},\quad
-				\widetilde{a}_{t}=
-				\begin{cases}
-					a_{t},   & \text{si } a_{t+1}\leq\frac{\beta}{2}, \\
-					a_{t}+1, & \text{si } a_{t+1}\geq\frac{\beta}{2}.
-				\end{cases}
-			\end{equation*}
-		\end{definition}
+		\begin{enumerate}[a)]
+			\item
+
+			      \begin{multicols}{2}
+				      \begin{itemize}
+					      \item
+
+					            \begin{math}
+						            \operatorname{fl}\left(\alert{x}\right)=
+					            \end{math}
+
+					      \item
+
+					            \begin{math}
+						            \operatorname{fl}\left(\alert{y}\right)=
+					            \end{math}
+				      \end{itemize}
+			      \end{multicols}
+
+
+
+			\item
+
+			      \begin{multicols}{2}
+				      \begin{itemize}
+
+					      \item
+
+					            \begin{math}
+						            \operatorname{EA}\left(\alert{x}\right)=
+						            \left
+						            |\alert{x}-
+						            \operatorname{fl}\left(\alert{x}\right)
+						            \right|=
+					            \end{math}
+
+					            \
+
+					      \item
+
+					            \begin{math}
+						            \operatorname{ER}\left(\alert{x}\right)=
+						            \dfrac{
+							            \left|
+							            \alert{x}-
+							            \operatorname{fl}\left(\alert{x}\right)
+							            \right|}{
+							            \left|
+							            \alert{x}
+							            \right|}=
+					            \end{math}
+
+					            \
+
+					      \item
+
+					            \begin{math}
+						            \operatorname{EA}\left(\alert{y}\right)=
+						            \left|
+						            \alert{y}-
+						            \operatorname{fl}\left(\alert{y}\right)
+						            \right|=
+					            \end{math}
+
+					            \
+
+					      \item
+
+					            \begin{math}
+						            \operatorname{ER}\left(\alert{y}\right)=
+						            \dfrac{
+							            \left|
+							            \alert{y}-
+							            \operatorname{fl}\left(\alert{y}\right)
+							            \right|}{
+							            \left|
+							            \alert{y}
+							            \right|}=
+					            \end{math}
+				      \end{itemize}
+			      \end{multicols}
+		\end{enumerate}
 	\end{solution}
 \end{frame}
 
 \begin{frame}
 	\begin{solution}
-		\begin{enumerate}[a)]
-			\item
-
-			      .
+		\begin{enumerate}
 
 			\item
 
-			      .
+			      \begin{multicols}{2}
+				      \begin{itemize}
+					      \item
+
+					            \begin{math}
+						            \alert{x+y}=
+						            \operatorname{fl}
+						            \left(
+						            \operatorname{fl}\left(\alert{x}\right)+
+						            \operatorname{fl}\left(\alert{y}\right)
+						            \right)=
+					            \end{math}
+
+					            \
+
+					      \item
+
+					            \begin{math}
+						            \alert{x-y}=
+						            \operatorname{fl}
+						            \left(
+						            \operatorname{fl}\left(\alert{x}\right)-
+						            \operatorname{fl}\left(\alert{y}\right)
+						            \right)=
+					            \end{math}
+
+					            \
+
+					      \item
+
+					            \begin{math}
+						            \alert{x\times y}=
+						            \operatorname{fl}
+						            \left(
+						            \operatorname{fl}\left(\alert{x}\right)\times
+						            \operatorname{fl}\left(\alert{y}\right)
+						            \right)=
+					            \end{math}
+
+					            \
+
+					      \item
+
+					            \begin{math}
+						            \dfrac{x}{y}=
+						            \operatorname{fl}
+						            \left(
+						            \dfrac{\operatorname{fl}\left(x\right)}{\operatorname{fl}\left(y\right)}
+						            \right)=
+					            \end{math}
+				      \end{itemize}
+			      \end{multicols}
+
 
 			\item
 
-			      \begin{math}
-				      x+y=
-				      \operatorname{fl}\left(x+y\right).
-			      \end{math}
+			      \begin{multicols}{2}
+				      \begin{itemize}
+					      \item
 
-			\item
+					            \begin{math}
+						            \operatorname{ER}\left(x+y\right)=
+						            \dfrac{
+							            \left|
+							            x+y-
+							            \operatorname{fl}\left(x\right)
+							            \right|
+						            }{
+							            \left|
+							            x
+							            \right|
+						            }
+					            \end{math}
 
-			      .
+					            \
+
+					      \item
+
+					            \begin{math}
+						            \operatorname{ER}\left(x-y\right)=
+					            \end{math}
+
+					            \
+
+					      \item
+
+					            \begin{math}
+						            \operatorname{ER}\left(x\times y\right)=
+					            \end{math}
+
+					            \
+
+					      \item
+
+					            \begin{math}
+						            \operatorname{ER}\left(\dfrac{x}{y}\right)=
+					            \end{math}
+				      \end{itemize}
+			      \end{multicols}
 		\end{enumerate}
 	\end{solution}
+
 \end{frame}
