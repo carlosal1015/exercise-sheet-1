@@ -45,22 +45,28 @@
 
 		\begin{enumerate}[a)]
 			\item
-                    Dado que están representados en magnitud y signo, el primer bit significativo es reservado exclusivamente para el símbolo, además sabiendo que el 0 se usa para los positivos y el 1, para los negativos, tenemos que, tanto el número de A y el número de B son negativos.
-                    Una vez identificado el signo, analizaremos el resto de cifras para obtener el número decimal, esto se realizará de la forma cotidiana de conversión de base n a base 10. Tenemos:
+                    En la representación magnitud y signo, el primer bit significativo es reservado para el signo ($0$ para los positivos y $1$ para los negativos).
+                    Así, los números $A$ y $B$ son negativos.
+                    Ahora, analizamos el resto de cifras para obtener el número decimal, esto se realizará con la conversión de base $2$ a base $10$. Tenemos:
 
-                    Convertiremos el número $1100111_{(2)}$ a base 10.
+                    Convertiremos el número ${1100111}_{\left(2\right)}$ a base $10$.
+                    \begin{equation*}
+                    1\times 2^{0}+
+                    1\times2^{1}+
+                    1\times2^{2}+
+                    0\times2^{3}+
+                    0\times2^{4}+
+                    1\times2^{5}+
+                    1\times2^{6}=
+                    103.
+                    \end{equation*}
+                    Como su primer bit significativo es $1$, lo cual significa que el número es negativo, este resultado se multiplicará por $-1$.
 
-                    $1\times2^0+1\times2^1+1\times2^2+0\times2^3+0\times2^4+1\times2^5+1\times2^6=103$
+                    Dándonos así que el valor en base $10$ del binario $A$ es $-103$. $A=-{103}_{\left(10\right)}$
 
-                    Como su primer bit significativo es 1, lo cual significa que el número es negativo, este resultado se multiplicará por -1.
+                    Haciendo el proceso de forma análoga para $B$, nos resulta que el valor en base $10$ es $-63$.
 
-                    Dándonos así que el valor en base 10 del binario A es -103.
-
-                    $A=-103_{(10)}$
-
-                    Haciendo el proceso de forma análoga para B, nos resulta que el valor en base 10 es -63.
-
-                    $B=-63_{(10)}$
+                    $B=-{63}_{\left(10\right)}$
 		\end{enumerate}
 	\end{solution}
 \end{frame}
@@ -69,12 +75,12 @@
 \begin{solution}
     \begin{enumerate}[a)]
         \item
-        Ahora, para calcular la suma de A y B, primero pondremos uno encima del otro de la siguiente forma:
+        Ahora, para calcular la suma de $A$ y $B$, primero pondremos uno encima del otro de la siguiente forma:
 
         \begin{table}[]
-            \begin{tabular}{c r l c}
-                & \alert{1} & 1100111 & (-103)\\
-               + & \alert{1} & 0111111 & (-63)\\
+            \begin{tabular}{>{$}c<{$} >{$}r<{$} >{$}l<{$} >{$}c<{$}}
+                & \alert{1} & 1100111 & \left(-103\right)\\
+               + & \alert{1} & 0111111 & \left(-63\right)\\
                \hline
             \end{tabular}
         \end{table}                 
@@ -84,14 +90,29 @@
         Realizaremos la suma de las cifras de la magnitud en un espacio aparte de la forma tradicional resultando de esta forma:
 
         \begin{table}[]
-            \begin{tabular}{c c}
+            \begin{tabular}{>{$}c<{$} >{$}c<{$}}
                  & 1100111\\
                + & 0111111\\
                \hline
+               & 10100110
             \end{tabular}
         \end{table}
+
+        Podemos darnos cuenta que, al sumar $A$ y $B$ usando solo las cifras de la magnitud y siendo estas $7$, el resultado nos da $8$ cifras, esto quiere decir que obtuvimos un Carry Out de valor $1$, lo cual nos da a entender que ocurrió un Overflow.
+
+        Dicha resultado tiene sentido dado que la suma de sus números en base $10$ nos da $-166$ cuyo número no es posible representar en magnitud y signo para $8$ bits, dado que el menor número posible es $-127$, por ende no es posible realizar la suma de estos números para $8$ bits.
+
+        \begin{table}[]
+            \begin{tabular}{>{$}c<{$} >{$}r<{$} >{$}l<{$} >{$}c<{$}}
+                & \alert{1} & 1100111 & (-103)\\
+               + & \alert{1} & 0111111 & (-63)\\
+               \hline
+               & \alert{1} & 0100110 & (-166)
+               \end{tabular}
+        \end{table}
+
+        Al devolver el número sin el Carry Out a la suma original, nos podemos dar cuenta que si convertimos el resultado a base $10$, no nos dará $-166$, demostrando una vez más que no es posible la suma.
         
     \end{enumerate}
 \end{solution}
-    
 \end{frame}
