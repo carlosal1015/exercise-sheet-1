@@ -46,3 +46,94 @@
 		\end{math}.
 	\end{solution}
 \end{frame}
+
+\begin{frame}
+	Los números reales $x$ se encuentran en un determinado intervalo
+	\begin{solution}
+		\begin{align*}
+			\beta^{L-1}  & \leq
+			\left|x\right|\leq
+			\beta^{U}\left(1-\beta^{-t}\right) \\
+			2^{-2-1}     & \leq
+			\left|x\right|\leq
+			2^{2}\left(1-2^{-3}\right)         \\
+			\dfrac{1}{8} & \leq
+			\left|x\right|\leq
+			4\left(1-\dfrac{1}{8}\right)=\dfrac{7}{2}
+		\end{align*}
+
+		\begin{table}[ht!]
+			\renewcommand{\arraystretch}{2.5}
+			\begin{tabular}{|>{$}c<{$}|>{$}c<{$}|>{$}c<{$}|>{$}c<{$}|>{$}c<{$}|>{$}c<{$}|}
+				\hline
+				-2
+				 & -1
+				 & 0
+				 & 1
+				 & 2
+				\\
+				\hline
+				{\left(0.100\right)}_{2}\times 2^{-2}=\dfrac{1}{8}
+				 & {\left(0.100\right)}_{2}\times 2^{-1}=\dfrac{1}{4}
+				 & {\left(0.100\right)}_{2}\times 2^{0}=\dfrac{1}{2}
+				 & {\left(0.100\right)}_{2}\times 2^{1}=\dfrac{1}{1}
+				 & {\left(0.100\right)}_{2}\times 2^{2}=\dfrac{2}{1}
+				\\
+				\hline
+				{\left(0.101\right)}_{2}\times 2^{-2}=\dfrac{5}{32}
+				 & {\left(0.101\right)}_{2}\times 2^{-1}=\dfrac{5}{16}
+				 & {\left(0.101\right)}_{2}\times 2^{0}=\dfrac{5}{8}
+				 & {\left(0.101\right)}_{2}\times 2^{1}=\dfrac{5}{4}
+				 & {\left(0.101\right)}_{2}\times 2^{2}=\dfrac{5}{2}
+				\\
+				\hline
+				{\left(0.110\right)}_{2}\times 2^{-2}=\dfrac{3}{16}
+				 & {\left(0.110\right)}_{2}\times 2^{-1}=\dfrac{3}{8}
+				 & {\left(0.110\right)}_{2}\times 2^{0}=\dfrac{3}{4}
+				 & {\left(0.110\right)}_{2}\times 2^{1}=\dfrac{3}{2}
+				 & {\left(0.110\right)}_{2}\times 2^{2}=\dfrac{3}{1}
+				\\
+				\hline
+				{\left(0.111\right)}_{2}\times 2^{-2}=\dfrac{7}{32}
+				 & {\left(0.111\right)}_{2}\times 2^{-1}=\dfrac{7}{16}
+				 & {\left(0.111\right)}_{2}\times 2^{0}=\dfrac{7}{8}
+				 & {\left(0.111\right)}_{2}\times 2^{1}=\dfrac{7}{4}
+				 & {\left(0.111\right)}_{2}\times 2^{2}=\dfrac{7}{2}
+				\\
+				\hline
+			\end{tabular}
+		\end{table}
+	\end{solution}
+\end{frame}
+
+\begin{frame}
+	\begin{align*}
+		\dfrac{24}{32}\oplus
+		\dfrac{7}{32}
+		 & =
+		\operatorname{fl}
+		\left(
+		\operatorname{fl}
+		\left(
+			\dfrac{24}{32}
+			\right)+
+		\operatorname{fl}
+		\left(
+			\dfrac{7}{32}
+			\right)
+		\right) \\
+		 & =
+		\operatorname{fl}
+		\left(
+		\dfrac{24}{32}
+		+
+		\dfrac{7}{32}
+		\right) \\
+		 & =
+		\operatorname{fl}
+		\left(
+		\dfrac{31}{32}
+		\right) \\
+		 & =1.
+	\end{align*}
+\end{frame}
