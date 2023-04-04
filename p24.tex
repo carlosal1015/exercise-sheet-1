@@ -1,0 +1,51 @@
+\begin{frame}
+	\begin{enumerate}\setcounter{enumi}{23}
+		\item
+
+		      Si tenemos $\beta=2$, $t=3$, $L=-2$ y $U=2$, determine los
+		      números de máquina que contiene dicho intervalo y además
+		      determine
+
+		      \begin{enumerate}[b)]
+			      \item
+
+			            \begin{math}
+				            \dfrac{24}{32}\oplus
+				            \dfrac{7}{32}
+			            \end{math}.
+		      \end{enumerate}
+	\end{enumerate}
+
+	\begin{solution}
+		\begin{definition}[Conjunto de números de punto flotante~\cite{Kincaid1994}]
+			Sea el \alert{conjunto de números de punto flotante}
+			\begin{equation*}
+				\mathbb{F}\left(\beta,t,L,U\right)=
+				\left\{0\right\}+
+				\left\{
+				x\in\mathbb{R}\mid
+				x=
+				\left(-1\right)^{s}
+				\beta^{e}
+				\sum_{i=1}^{t}a_{i}\beta^{-i}
+				\right\}
+			\end{equation*}
+			con $t$ dígitos significativos, base $\beta\geq2$,
+			$0\leq a_{i}\leq\beta-1$ y rango $\left(L,U\right)$ con
+			$0<L\leq e\leq U>0$.
+		\end{definition}
+
+		El
+		\begin{math}
+			\operatorname{card}\mathbb{F}\left(\beta=2,t=3,L=-2,U=2\right)=
+			2\left(\beta-1\right)\beta^{t-1}\left(U-L+1\right)+1=
+			2\left(2-1\right)2^{3-1}\left(2-\left(-2\right)+1\right)+1=
+			41
+		\end{math}.
+	\end{solution}
+\end{frame}
+
+% Dado un $x\in\mathbb{R}$ en la notación posicional normalizada
+% \begin{equation*}
+% 	.
+% \end{equation*}

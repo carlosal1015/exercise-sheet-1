@@ -40,102 +40,27 @@
 % arara: --> ['aux','log','nav',
 % arara: --> 'out','snm','toc','pytxcode']
 % arara: --> }
-\PassOptionsToPackage{svgnames}{xcolor}
-\documentclass[
-	spanish,
-	8pt,
-	utf8,
-	xcolor=table,
-	handout,
-	aspectratio=169,
-	professionalfonts,
-	% notheorems,
-	mathserif,
-	leqno,
-	% t
-]{beamer}
-\setbeamersize{text margin left=5pt,text margin right=5pt}
-\usepackage[spanish,es-sloppy]{babel}
-\spanishdatedel\decimalpoint
-\usepackage{mathtools}
-\usepackage{minted}
-\usepackage{enumerate}
-\usepackage{multicol}
-% \usepackage{pythontex}
-\usepackage[
-	citestyle=numeric,
-	style=apa,
-	backend=biber,
-	defernumbers=true,
-	sorting=ynt,
-	maxcitenames=4
-]{biblatex}
-\addbibresource{references.bib}
-
-\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
-
-\newcounter{savedenum}
-\newcommand*{\saveenum}{\setcounter{savedenum}{\theenumi}}
-\newcommand*{\resume}{\setcounter{enumi}{\thesavedenum}}
-
-\setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{footline}{}
-\setbeamertemplate{headline}{}
-
-% https://tex.stackexchange.com/questions/68080/beamer-bibliography-icon
-\setbeamertemplate{bibliography item}{%
-	\ifboolexpr{ test {\ifentrytype{book}} or test {\ifentrytype{mvbook}}
-		or test {\ifentrytype{collection}} or test {\ifentrytype{mvcollection}}
-		or test {\ifentrytype{reference}} or test {\ifentrytype{mvreference}} }
-	{\setbeamertemplate{bibliography item}[book]}
-	{\ifentrytype{online}
-		{\setbeamertemplate{bibliography item}[online]}
-		{\setbeamertemplate{bibliography item}[article]}}%
-	\usebeamertemplate{bibliography item}}
-
-\defbibenvironment{bibliography}
-{\list{}
-	{\settowidth{\labelwidth}{\usebeamertemplate{bibliography item}}%
-		\setlength{\leftmargin}{\labelwidth}%
-		\setlength{\labelsep}{\biblabelsep}%
-		\addtolength{\leftmargin}{\labelsep}%
-		\setlength{\itemsep}{\bibitemsep}%
-		\setlength{\parsep}{\bibparsep}}}
-{\endlist}
-{\item}
-
-\title{
-	\huge\sffamily
-	Primera Práctica Dirigida\quad Grupo N$^{\circ}$~1
-}
-
-\subtitle{
-	\large\scshape
-	Análisis y Modelamiento Numérico I\quad CM4F1 B\\[.5\baselineskip]
-		\normalsize\normalfont
-		Profesor Ángel Enrique Ramírez Gutiérrez.
-}
-
-\author{
-	Aldo Luna Bueno\quad\and\quad
-	Alejandro Escobar Mejia\quad\and\quad
-	Carlos Aznarán Laos\quad\and\quad
-	Brian Huaman Garcia\and \\[\baselineskip]
-  Khalid Izquierdo Ayllon\quad\and\quad
-  Carlos Malvaceda Canales\quad\and\quad
-  Bruno Cipriano Arroyo\quad\and\quad
-  Breiner Catalino Morales
-}
-
-\institute{\large
-	Facultad de Ciencias \and
-	Universidad Nacional de Ingeniería
-}
-\date{5 de abril del 2023}
-
+\input{preamble}
 \begin{document}
 
 \frame{\titlepage}
+
+\begin{frame}
+	\frametitle{Lista de N$^{\circ}$ de pregunta / estudiante}
+	\tableofcontents
+\end{frame}
+
+\section{Pregunta N$^{\circ}$2\qquad Aldo Luna Bueno}
+\section{Pregunta N$^{\circ}$5\qquad Alejandro Escobar Mejia}
+\section{Pregunta N$^{\circ}$11\qquad Carlos Aznarán Laos}
+\section{Pregunta N$^{\circ}$14\qquad Brian Huaman Garcia}
+\section{Pregunta N$^{\circ}$16a\qquad Khalid Izquierdo Ayllon}
+\section{Pregunta N$^{\circ}$17b\qquad Carlos Malvaceda Canales}
+\section{Pregunta N$^{\circ}$19b\qquad Bruno Cipriano Arroyo}
+\section{Pregunta N$^{\circ}$21b\qquad Breiner Catalino Morales}
+\section{Pregunta N$^{\circ}$24a\qquad Breiner Catalino Morales}
+
+\input{p2}
 
 \begin{frame}
 
@@ -340,50 +265,7 @@
 	\end{solution}
 \end{frame}
 
-\begin{frame}
-	\begin{enumerate}\setcounter{enumi}{23}
-		\item
-
-		      Si tenemos $\beta=2$, $t=3$, $L=-2$ y $U=2$, determine los
-		      números de máquina que contiene dicho intervalo y además
-		      determine:
-
-		      \begin{enumerate}[b)]
-			      \item
-
-			            $\frac{24}{32}\oplus\frac{7}{32}$.
-		      \end{enumerate}
-	\end{enumerate}
-
-	\begin{solution}
-		.
-	\end{solution}
-\end{frame}
-
-\begin{frame}\transblindsvertical
-	\frametitle{Referencias}
-	%------------------------------------------------------------ 1
-	\only<1>{
-		\begin{itemize}
-			\item Libros
-			      \nocite{*}
-			      \printbibliography[heading=none,keyword=book]
-		\end{itemize}
-	}
-	%------------------------------------------------------------ 2
-	\only<2>{
-		\begin{itemize}
-			\item Artículos científicos
-			      \printbibliography[heading=none,keyword=paper]
-		\end{itemize}
-	}
-	%------------------------------------------------------------ 3
-	\only<3>{
-		\begin{itemize}
-			\item Sitios web
-			      \printbibliography[heading=none,keyword=online]
-		\end{itemize}
-	}
-\end{frame}
+\input{p24}
+\input{references}
 
 \end{document}
