@@ -51,13 +51,13 @@
 				\left(
 				\operatorname{fl}\left(x\right)+
 				\operatorname{fl}\left(y\right)
-				\right)         \\
+				\right),        \\
 				x-y & \coloneqq
 				\operatorname{fl}
 				\left(
 				\operatorname{fl}\left(x\right)-
 				\operatorname{fl}\left(y\right)
-				\right)
+				\right),
 			\end{aligned}
 			\qquad\qquad
 			\begin{aligned}[c]
@@ -66,12 +66,12 @@
 				\left(
 				\operatorname{fl}\left(x\right)\times
 				\operatorname{fl}\left(y\right)
-				\right)                 \\
+				\right),                \\
 				\frac{x}{y} & \coloneqq
 				\operatorname{fl}
 				\left(
 				\frac{\operatorname{fl}\left(x\right)}{\operatorname{fl}\left(y\right)}
-				\right)
+				\right).
 			\end{aligned}
 		\end{equation*}
 	\end{definition}
@@ -208,7 +208,7 @@
 					      \item
 
 					            \begin{math}
-						            \alert{x+y}=
+						            \alert{x}+\alert{y}=
 						            \operatorname{fl}
 						            \left(
 						            \operatorname{fl}\left(\alert{x}\right)+
@@ -221,7 +221,7 @@
 					      \item
 
 					            \begin{math}
-						            \alert{x-y}=
+						            \alert{x}-\alert{y}=
 						            \operatorname{fl}
 						            \left(
 						            \operatorname{fl}\left(\alert{x}\right)-
@@ -234,7 +234,7 @@
 					      \item
 
 					            \begin{math}
-						            \alert{x\times y}=
+						            \alert{x}\times\alert{y}=
 						            \operatorname{fl}
 						            \left(
 						            \operatorname{fl}\left(\alert{x}\right)\times
@@ -247,61 +247,98 @@
 					      \item
 
 					            \begin{math}
-						            \dfrac{x}{y}=
+						            \dfrac{\alert{x}}{\alert{y}}=
 						            \operatorname{fl}
 						            \left(
-						            \dfrac{\operatorname{fl}\left(x\right)}{\operatorname{fl}\left(y\right)}
+						            \dfrac{
+							            \operatorname{fl}\left(\alert{x}\right)
+						            }{
+							            \operatorname{fl}\left(\alert{y}\right)
+						            }
 						            \right)=
 					            \end{math}
 				      \end{itemize}
 			      \end{multicols}
 
-
 			\item
 
-			      \begin{multicols}{2}
-				      \begin{itemize}
-					      \item
+			      \begin{itemize}
+				      \item
 
-					            \begin{math}
-						            \operatorname{ER}\left(x+y\right)=
-						            \dfrac{
-							            \left|
-							            x+y-
-							            \operatorname{fl}\left(x\right)
-							            \right|
-						            }{
-							            \left|
-							            x
-							            \right|
-						            }
-					            \end{math}
+				            \begin{math}
+					            \operatorname{ER}\left(\alert{x+y}\right)=
+					            \dfrac{
+						            \left|
+						            \left(\alert{x+y}\right)-
+						            \operatorname{fl}\left(\alert{x+y}\right)
+						            \right|
+					            }{
+						            \left|
+						            \alert{x+y}
+						            \right|
+					            }=
+				            \end{math}
 
-					            \
+				            \
 
-					      \item
+				            \
 
-					            \begin{math}
-						            \operatorname{ER}\left(x-y\right)=
-					            \end{math}
+				      \item
 
-					            \
+				            \begin{math}
+					            \operatorname{ER}\left(\alert{x-y}\right)=
+					            \dfrac{
+						            \left|
+						            \left(\alert{x-y}\right)-
+						            \operatorname{fl}\left(\alert{x-y}\right)
+						            \right|
+					            }{
+						            \left|
+						            \alert{x-y}
+						            \right|
+					            }=
+				            \end{math}
 
-					      \item
+				            \
 
-					            \begin{math}
-						            \operatorname{ER}\left(x\times y\right)=
-					            \end{math}
+				            \
 
-					            \
+				      \item
 
-					      \item
+				            \begin{math}
+					            \operatorname{ER}\left(\alert{x\times y}\right)=
+					            \dfrac{
+						            \left|
+						            \left(\alert{x\times y}\right)-
+						            \operatorname{fl}\left(\alert{x\times y}\right)
+						            \right|
+					            }{
+						            \left|
+						            \alert{x\times y}
+						            \right|
+					            }=
+				            \end{math}
 
-					            \begin{math}
-						            \operatorname{ER}\left(\dfrac{x}{y}\right)=
-					            \end{math}
-				      \end{itemize}
-			      \end{multicols}
+				            \
+
+				            \
+
+				      \item
+
+				            \begin{math}
+					            \operatorname{ER}\left(\alert{\dfrac{x}{y}}\right)=
+					            \dfrac{
+						            \left|
+						            \left(\alert{\dfrac{x}{y}}\right)-
+						            \operatorname{fl}\left(\alert{\dfrac{x}{y}}\right)
+						            \right|
+					            }{
+						            \left|
+						            \alert{\dfrac{x}{y}}
+						            \right|
+					            }=
+				            \end{math}
+			      \end{itemize}
 		\end{enumerate}
 	\end{solution}
 
