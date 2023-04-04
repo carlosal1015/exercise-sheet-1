@@ -18,7 +18,7 @@
 		      \begin{enumerate}[a)]
 			      \item
 
-			            ¿Cómo almacena este computador al número $9.123$?
+			            ¿Cómo almacena este computador el número $9.123$?
 
 			      \item
 
@@ -27,50 +27,103 @@
 		      \end{enumerate}
 	\end{enumerate}
 
-	\begin{solution}            
+	\begin{solution}
 		\begin{enumerate}[a)]
 			\item
 			      Sea $N$ = 9.123 el número expresado en sistema decimal.
 
-			      Parte entera: $n_{0}$ = 9
-         
-			      \begin{tabular}{c|c|c}
-				      $k$ & $n_{k}$ & $a_{k}$ \\ \hline
-				      0   & 9       & 1       \\ 
-				      1   & 4       & 0       \\ 
-				      2   & 2       & 0       \\ 
-				      3   & 1       & 1
-			      \end{tabular}
-         
-			      Parte fraccionaria: $r_{1}$ = 0.123
-         
-			      \begin{tabular}{c|c|c|c}
-				      $k$ & $r_{k}$ & $2r_{k}$ & $d_{k}$ \\ \hline
-				      1   & 0.123   & 0.246    & 0       \\
-				      2   & 0.246   & 0.492    & 0       \\ 
-				      3   & 0.492   & 0.984    & 0       \\          
-				      4   & 0.984   & 1.968    & 1       \\ 
-				      5   & 0.968   & 1.936    & 1
-			      \end{tabular}
+			      \begin{columns}[t]
+				      \begin{column}{0.48\textwidth}
+					      \begin{description}
+						      \item[Parte entera de $N$]
 
-                    
+							      $n_{0}=9$
 
-                    Entonces, $N$ = $1001.00011..._{2}$
+							      \begin{table}[ht!]
+								      \begin{tabular}{>{$}c<{$}|>{$}c<{$}|>{$}c<{$}}
+									      k & n_{k} & a_{k} \\
+									      \hline
+									      0 & 9     & 1     \\
+									      1 & 4     & 0     \\
+									      2 & 2     & 0     \\
+									      3 & 1     & 1
+								      \end{tabular}
+							      \end{table}
+					      \end{description}
+				      \end{column}
+				      \begin{column}{0.48\textwidth}
+					      \begin{description}
+						      \item[Parte fraccionaria de $N$]
 
-                    Su representación en notación científica normalizada sería $N$ = $0.1(001000)11..._{2}\times2^{4}$.
+							      $r_{1}=0.123$
 
-                    Haremos el redondeo con ayuda de los paréntesis. Estos separan los lugares de los seis bits que irán a la mantisa. Como el bit que sigue inmediatamente después del séptimo es 1 y luego hay al menos otro 1, el séptimo bit aumenta 1: $N$ = $0.1(001001)_{2}\times2^{4}$
+							      \begin{table}[ht!]
+								      \begin{tabular}{>{$}c<{$}|>{$}c<{$}|>{$}c<{$}|>{$}c<{$}}
+									      k & r_{k} & 2r_{k} & d_{k} \\
+									      \hline
+									      1 & 0.123 & 0.246  & 0     \\
+									      2 & 0.246 & 0.492  & 0     \\
+									      3 & 0.492 & 0.984  & 0     \\
+									      4 & 0.984 & 1.968  & 1     \\
+									      5 & 0.968 & 1.936  & 1
+								      \end{tabular}
+							      \end{table}
 
-                    Ahora añadimos a la representación el signo y el desplazamiento del exponente (-3):
-                    
-                    $N$ = $(-1)^0\times0.1(001001)_{2}\times2^{7-3}$
+					      \end{description}
+				      \end{column}
+			      \end{columns}
 
-                    Signo: 0
-                    Mantisa: 001001
-                    Exponente desplazado: 7 = $111_{2}$
-                    
-			      Por lo tanto, una computadora con redondeo y punto flotante de 10 bits, como se ha descrito, almacena el número 9.123 de esta forma:
-         
+			      Entonces,
+			      \begin{math}
+				      N=
+				      {1001.00011\dotsc}_{\left(2\right)}
+			      \end{math}.
+
+			      Su representación en notación científica normalizada
+			      sería
+			      \begin{math}
+				      N=
+				      {0.1(001000)11\dotsc}_{\left(2\right)}\times
+				      2^{4}
+			      \end{math}.
+		\end{enumerate}
+	\end{solution}
+\end{frame}
+
+\begin{frame}
+	\begin{solution}
+		\begin{enumerate}[a)]
+			\item
+
+			      Haremos el redondeo con ayuda de los paréntesis.
+			      Estos separan los lugares de los seis bits que irán a la
+			      mantisa.
+			      Como el bit que sigue inmediatamente después del séptimo
+			      es $1$ y luego hay al menos otro $1$, el séptimo bit
+			      aumenta $1$:
+			      \begin{math}
+				      N=0.1\left(001001\right)_{2}\times
+				      2^{4}
+			      \end{math}
+
+			      Ahora añadimos a la representación el signo y el desplazamiento
+			      del exponente (-3):
+
+			      \begin{math}
+				      N=
+				      {\left(-1\right)}^{0}\times
+				      0.1\left(001001\right)_{\left(2\right)}\times
+				      2^{7-3}
+			      \end{math}
+
+			      Signo: 0
+			      Mantisa: 001001
+			      Exponente desplazado: 7 = $111_{2}$
+
+			      Por lo tanto, una computadora con redondeo y punto flotante de
+			      $10$ bits, como se ha descrito, almacena el número $9.123$ de
+			      esta forma:
+
 			      \begin{table}[ht!]
 				      \begin{tabular}{|>{$}c<{$}|>{$}c<{$} >{$}c<{$} >{$}c<{$}|>{$}c<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$} >{$}c<{$}|}
 					      \hline
@@ -78,8 +131,6 @@
 					      \hline
 				      \end{tabular}
 			      \end{table}
-			\item
-
 		\end{enumerate}
 	\end{solution}
 \end{frame}
