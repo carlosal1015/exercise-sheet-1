@@ -36,6 +36,21 @@
 			$0\leq a_{i}\leq\beta-1$ y rango $\left(L,U\right)$ con
 			$0<L\leq e\leq U>0$.
 		\end{definition}
+
+		Los números son de la forma
+		\begin{math}
+			\left(-1\right)^{s}\cdot
+			\left(0.a_{1}a_{2}a_{3}\right)_{2}\times
+			2^{e}
+		\end{math},
+		donde $e\in\left[-2,2\right]$ y $a_{1}\neq0$.
+
+		El intervalo que contiene a los números reales que pueden ser
+		representados por $\mathbb{F}$ es
+		\begin{equation*}
+			\left[-\dfrac{7}{2},-\dfrac{1}{8}\right]\cup
+			\left[\dfrac{1}{8},\dfrac{7}{2}\right]\subset\mathbb{R}
+		\end{equation*}
 	\end{solution}
 \end{frame}
 
@@ -138,54 +153,58 @@
 \end{frame}
 
 \begin{frame}
-	\begin{align*}
-		\dfrac{24}{32}\oplus
-		\dfrac{7}{32}
-		 & =
-		\operatorname{fl}
-		\left(
-		\operatorname{fl}
-		\left(
-			\dfrac{24}{32}
-			\right)+
-		\operatorname{fl}
-		\left(
-			\dfrac{7}{32}
-			\right)
-		\right)            \\
-		 & =
-		\operatorname{fl}
-		\left(
-		\operatorname{fl}
-		\left(
-			\alert{\dfrac{3}{4}}
-			\right)+
-		\operatorname{fl}
-		\left(
-			\alert{\dfrac{7}{32}}
-			\right)
-		\right)\quad
-		\text{
-			, pero
-			$\dfrac{3}{4},\dfrac{7}{32}\in\mathbb{F}\left(\beta=2,t=3,L=-2,U=2\right)$
-		}
-		\\
-		 & =
-		\operatorname{fl}
-		\left(
-		\alert{\dfrac{3}{4}}
-		+
-		\alert{\dfrac{7}{32}}
-		\right)            \\
-		 & =
-		\operatorname{fl}
-		\left(
-		\dfrac{31}{32}
-		\right)\text{
-			, pero
-			$\dfrac{31}{32}\not\in\mathbb{F}\left(\beta=2,t=3,L=-2,U=2\right)$
-		}                  \\
-		 & =\dfrac{32}{32} \\
-		 & =1.
-	\end{align*}
+	\begin{enumerate}[b)]
+		\item
+
+		      \begin{align*}
+			      \dfrac{24}{32}\oplus
+			      \dfrac{7}{32}
+			       & =
+			      \operatorname{fl}
+			      \left(
+			      \operatorname{fl}
+			      \left(
+				      \dfrac{24}{32}
+				      \right)+
+			      \operatorname{fl}
+			      \left(
+				      \dfrac{7}{32}
+				      \right)
+			      \right)            \\
+			       & =
+			      \operatorname{fl}
+			      \left(
+			      \operatorname{fl}
+			      \left(
+				      \alert{\dfrac{3}{4}}
+				      \right)+
+			      \operatorname{fl}
+			      \left(
+				      \alert{\dfrac{7}{32}}
+				      \right)
+			      \right)\quad
+			      \text{
+				      , pero
+				      $\dfrac{3}{4},\dfrac{7}{32}\in\mathbb{F}\left(\beta=2,t=3,L=-2,U=2\right)$
+			      }
+			      \\
+			       & =
+			      \operatorname{fl}
+			      \left(
+			      \alert{\dfrac{3}{4}}
+			      +
+			      \alert{\dfrac{7}{32}}
+			      \right)            \\
+			       & =
+			      \operatorname{fl}
+			      \left(
+			      \dfrac{31}{32}
+			      \right)\text{
+				      , pero
+				      $\dfrac{31}{32}\not\in\mathbb{F}\left(\beta=2,t=3,L=-2,U=2\right)$
+			      }                  \\
+			       & =\dfrac{32}{32} \\
+			       & =1.
+		      \end{align*}
+	\end{enumerate}
 \end{frame}
