@@ -36,32 +36,63 @@
 			$0\leq a_{i}\leq\beta-1$ y rango $\left(L,U\right)$ con
 			$0<L\leq e\leq U>0$.
 		\end{definition}
-
-		El
-		\begin{math}
-			\operatorname{card}\mathbb{F}\left(\beta=2,t=3,L=-2,U=2\right)=
-			2\left(\beta-1\right)\beta^{t-1}\left(U-L+1\right)+1=
-			2\left(2-1\right)2^{3-1}\left(2-\left(-2\right)+1\right)+1=
-			41
-		\end{math}.
 	\end{solution}
 \end{frame}
 
 \begin{frame}
-	Los números reales $x$ se encuentran en un determinado intervalo
 	\begin{solution}
-		\begin{align*}
-			\beta^{L-1}  & \leq
+		Si $x\in\mathbb{F}\left(\beta,t,L,U\right)$, entonces
+		% $-x\in\mathbb{F}\left(\beta,t,L,U\right)$ y
+		\begin{math}
+			x_{\min}=
+			\beta^{L-1}\leq
 			\left|x\right|\leq
-			\beta^{U}\left(1-\beta^{-t}\right) \\
-			2^{-2-1}     & \leq
+			\beta^{U}\left(1-\beta^{-t}\right)=
+			x_{\max}
+		\end{math}.
+		Para
+		\begin{math}
+			\mathbb{F}
+			\left(
+			\beta=2,
+			t=3,
+			L=-2,
+			U=2
+			\right)
+		\end{math}:
+		\begin{equation*}
+			\alert{\dfrac{1}{8}}=
+			2^{-2-1}=
+			x_{\min}\leq
 			\left|x\right|\leq
-			2^{2}\left(1-2^{-3}\right)         \\
-			\dfrac{1}{8} & \leq
-			\left|x\right|\leq
-			4\left(1-\dfrac{1}{8}\right)=\dfrac{7}{2}
-		\end{align*}
-
+			x_{\max}=
+			2^{2}\left(1-2^{-3}\right)=
+			4\left(1-\dfrac{1}{8}\right)=
+			\alert{\dfrac{7}{2}}.
+		\end{equation*}
+		\alert{El total de número de máquinas} están dados por los que aparecen en la siguiente tabla,
+		sus opuestos y el cero, en total el
+		\begin{math}
+			\operatorname{card}
+			\mathbb{F}
+			\left(
+			\beta=2,
+			t=3,
+			L=-2,
+			U=2
+			\right)=
+			2\left(\beta-1\right)
+			{\beta}^{t-1}
+			\left(U-L+1\right)+1=
+			2\left(2-1\right)
+			{2}^{3-1}
+			\left(
+			2-\left(-2\right)+1
+			\right)+
+			1=
+			\alert{41}
+		\end{math}.
+		% Los números reales $x$ se encuentran en un determinado intervalo
 		\begin{table}[ht!]
 			\renewcommand{\arraystretch}{2.5}
 			\begin{tabular}{|>{$}c<{$}|>{$}c<{$}|>{$}c<{$}|>{$}c<{$}|>{$}c<{$}|>{$}c<{$}|}
