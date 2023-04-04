@@ -45,11 +45,19 @@
 
 		\begin{enumerate}[a)]
 			\item
-			      En la representación magnitud y signo, el primer bit significativo es reservado para el signo ($0$ para los positivos y $1$ para los negativos).
-			      Así, los números $A$ y $B$ son negativos.
-			      Ahora, analizamos el resto de cifras para obtener el número decimal, esto se realizará con la conversión de base $2$ a base $10$. Tenemos:
 
-			      Convertiremos el número ${1100111}_{\left(2\right)}$ a base $10$.
+			      En la representación magnitud y signo, el primer bit
+			      significativo es reservado para el signo
+			      ($0$ para los positivos y $1$ para los negativos).
+			      Así, los números $A$ y $B$ son negativos.
+			      Ahora, analizamos el resto de cifras para obtener el
+			      número decimal, esto se realizará con la conversión de
+			      base $2$ a base $10$.
+			      Tenemos:
+
+			      Convertiremos el número ${1100111}_{\left(2\right)}$ a
+			      base $10$.
+
 			      \begin{equation*}
 				      1\times 2^{0}+
 				      1\times2^{1}+
@@ -60,11 +68,17 @@
 				      1\times2^{6}=
 				      103.
 			      \end{equation*}
-			      Como su primer bit significativo es $1$, lo cual significa que el número es negativo, este resultado se multiplicará por $-1$.
 
-			      Dándonos así que el valor en base $10$ del binario $A$ es $-103$. $A=-{103}_{\left(10\right)}$
+			      Como su primer bit significativo es $1$, significa que el
+			      número es negativo, este resultado se multiplicará por
+			      $-1$.
 
-			      Haciendo el proceso de forma análoga para $B$, nos resulta que el valor en base $10$ es $-63$.
+			      Dándonos así que el valor en base $10$ del binario $A$ es
+			      $-103$.
+			      $A=-{103}_{\left(10\right)}$
+
+			      Haciendo el proceso de forma análoga para $B$, nos
+			      resulta que el valor en base $10$ es $-63$.
 
 			      $B=-{63}_{\left(10\right)}$
 		\end{enumerate}
@@ -75,9 +89,10 @@
 	\begin{solution}
 		\begin{enumerate}[a)]
 			\item
-			      Ahora, para calcular la suma de $A$ y $B$, primero pondremos uno encima del otro de la siguiente forma:
+			      Ahora, para calcular la suma de $A$ y $B$, primero
+			      pondremos uno encima del otro de la siguiente forma:
 
-			      \begin{table}[]
+			      \begin{table}[ht!]
 				      \begin{tabular}{>{$}c<{$} >{$}r<{$} >{$}l<{$} >{$}c<{$}}
 					        & \alert{1} & 1100111 & \left(-103\right) \\
 					      + & \alert{1} & 0111111 & \left(-63\right)  \\
@@ -85,11 +100,21 @@
 				      \end{tabular}
 			      \end{table}
 
-			      Como se puede apreciar, el primer bit significativo está apartado, dado que este no se usará para la suma de estos números en base 2, además, a la derecha se puede apreciar dichos números en base 10 para corroborar al finalizar la suma. En este caso que las primeras cifras significativas de cada número son iguales se mantendrá esta cifra al finalizar la suma, dado que al ser iguales el signo no cambiará.
+			      Como se puede apreciar, el primer bit significativo está
+			      apartado, dado que este no se usará para la suma de estos
+			      números en base $2$, además, a la derecha se puede
+			      apreciar dichos números en base $10$ para corroborar al
+			      finalizar la suma.
+			      En este caso que las primeras cifras significativas de
+			      cada número son iguales se mantendrá esta cifra al
+			      finalizar la suma, dado que al ser iguales el signo no
+			      cambiará.
 
-			      Realizaremos la suma de las cifras de la magnitud en un espacio aparte de la forma tradicional resultando de esta forma:
+			      Realizaremos la suma de las cifras de la magnitud en un
+			      espacio aparte de la forma tradicional resultando de esta
+			      forma:
 
-			      \begin{table}[]
+			      \begin{table}[ht!]
 				      \begin{tabular}{>{$}c<{$} >{$}c<{$}}
 					        & 1100111  \\
 					      + & 0111111  \\
@@ -98,21 +123,32 @@
 				      \end{tabular}
 			      \end{table}
 
-			      Podemos darnos cuenta que, al sumar $A$ y $B$ usando solo las cifras de la magnitud y siendo estas $7$, el resultado nos da $8$ cifras, esto quiere decir que obtuvimos un Carry Out de valor $1$, lo cual nos da a entender que ocurrió un Overflow.
+			      Podemos darnos cuenta que, al sumar $A$ y $B$ usando solo
+			      las cifras de la magnitud y siendo estas $7$, el
+			      resultado nos da $8$ cifras, esto quiere decir que
+			      obtuvimos un Carry Out de valor $1$, lo cual nos da a
+			      entender que ocurrió un Overflow.
 
-			      Dicha resultado tiene sentido dado que la suma de sus números en base $10$ nos da $-166$ cuyo número no es posible representar en magnitud y signo para $8$ bits, dado que el menor número posible es $-127$, por ende no es posible realizar la suma de estos números para $8$ bits.
+			      Dicha resultado tiene sentido dado que la suma de sus
+			      números en base $10$ nos da $-166$ cuyo número no es
+			      posible representar en magnitud y signo para $8$ bits,
+			      dado que el menor número posible es $-127$, por ende no
+			      es posible realizar la suma de estos números para $8$
+			      bits.
 
-			      \begin{table}[]
+			      \begin{table}[ht!]
 				      \begin{tabular}{>{$}c<{$} >{$}r<{$} >{$}l<{$} >{$}c<{$}}
-					        & \alert{1} & 1100111 & (-103) \\
-					      + & \alert{1} & 0111111 & (-63)  \\
+					        & \alert{1} & 1100111 & \left(-103\right) \\
+					      + & \alert{1} & 0111111 & \left(-63\right)  \\
 					      \hline
-					        & \alert{1} & 0100110 & (-166)
+					        & \alert{1} & 0100110 & \left(-166\right)
 				      \end{tabular}
 			      \end{table}
 
-			      Al devolver el número sin el Carry Out a la suma original, nos podemos dar cuenta que si convertimos el resultado a base $10$, no nos dará $-166$, demostrando una vez más que no es posible la suma.
-
+			      Al devolver el número sin el Carry Out a la suma
+			      original, nos podemos dar cuenta que si convertimos el
+			      resultado a base $10$, no nos dará $-166$, demostrando
+			      una vez más que no es posible la suma.
 		\end{enumerate}
 	\end{solution}
 \end{frame}
@@ -122,24 +158,32 @@
 	\begin{solution}
 		\begin{enumerate}[a)]
 			\item
-			      Para calcular la resta de A y B, seguiremos un proceso similar al anterior, dado que $A-B$ es lo mismo que decir $A+(-B)$, lo único diferente que realizaremos será cambiarle el signo al número binario B, para ello solo tendremos que cambiar el 1 de su primera cifra significativa por un 0 y resolveremos la suma como el caso anterior.
 
-			      \begin{table}[]
+			      Para calcular la resta de $A$ y $B$, seguiremos un
+			      proceso similar al anterior, dado que $A-B$ es lo mismo
+			      que decir $A+\left(-B\right)$, lo único diferente que
+			      realizaremos será cambiarle el signo al número binario
+			      $B$, para ello solo tendremos que cambiar el $1$ de su
+			      primera cifra significativa por un $0$ y resolveremos la
+			      suma como el caso anterior.
+
+			      \begin{table}[ht!]
 				      \begin{tabular}{>{$}c<{$} >{$}r<{$} >{$}l<{$} >{$}c<{$}}
-					        & \alert{1} & 1100111 & (-103) \\
-					      - & \alert{1} & 0111111 & (-63)  \\
+					        & \alert{1} & 1100111 & \left(-103\right) \\
+					      - & \alert{1} & 0111111 & \left(-63\right)  \\
 					      \hline
 				      \end{tabular}
 				      \qquad
-				      \Longrightarrow
+				      \begin{math}
+					      \Longrightarrow
+				      \end{math}
 				      \qquad
 				      \begin{tabular}{>{$}c<{$} >{$}r<{$} >{$}l<{$} >{$}c<{$}}
-					        & \alert{1} & 1100111 & (-103) \\
-					      + & \alert{0} & 0111111 & (63)   \\
+					        & \alert{1} & 1100111 & \left(-103\right) \\
+					      + & \alert{0} & 0111111 & \left(63\right)   \\
 					      \hline
 				      \end{tabular}
 			      \end{table}
-
 		\end{enumerate}
 	\end{solution}
 \end{frame}
