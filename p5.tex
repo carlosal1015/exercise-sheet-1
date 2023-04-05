@@ -222,10 +222,58 @@
 				      0\times2^{3}+
 				      0\times2^{4}+
 				      1\times2^{5}+
-				      1\times2^{6}=
-				      103.
+				      1\times2^{6}-
+                        1\times2^{7}=
+				      -25
 			      \end{equation*}
-			      
+
+                Dándonos así que el valor en base $10$ del binario $A$ es
+			      $-25$.
+			      $A=-{25}_{\left(10\right)}$.
+
+			      De forma análoga para $B$, su valor en base $10$ es $-65$.
+			      $B=-{65}_{\left(10\right)}$.
+
+                Para calcular la suma de A y B se realizará como una suma normal de números en mismas bases, obteniendo el siguiente resultado:
+
+                \begin{table}[]
+                    \begin{tabular}{c c c}
+                         & 11100111 & (-25)\\
+                        + & 10111111 & (-65)\\
+                        \hline
+                        & 10100110 & (-90)
+                    \end{tabular}
+                \end{table}
+                Con un Carry out=1, no ocurre overflow, ya que la primera cifra significativa del resultado, ignorando el Carry out, es igual a las otras 2, además, convirtiendo el resultado a base decimal nos resulta -90, tal cual como resultaría la suma en base 10.
+                               
 		\end{enumerate}
 	\end{solution}
+\end{frame}
+
+\begin{frame}
+    \begin{solution}
+        \begin{enumerate}[b)]
+            \item 
+            
+                Para la resta de A y B se realizará como en el apartado A, es decir realizaremos A+(-B), transformaremos el binario B a -B, para ello, una de las formas de hacerlo es buscar de derecha a izquierda la primera cifra 1, y cambiar las cifras siguientes a esta, de forma que los 1 se vuelvan 0 y viceversa. Por último se suman las cifras como una suma normal en la misma base.
+
+                \begin{table}[]
+                    \begin{tabular}{c c c}
+                         & 11100111 & (-25) \\
+                        - & 10111111 & (-65) \\
+                        \hline
+                    \end{tabular}
+                    \qquad
+                    \Longleftarrow
+                    \qquad
+                    \begin{tabular}{c c c}
+                         & 11100111 & (-25) \\
+                        + & 01000001 & (65) \\
+                        \hline
+                        & 00101000 & (40) \\
+                    \end{tabular}
+                \end{table}
+                De esta forma obtendremos la resta de A y B, en la cual tenemos un Carry out=1, el cual ignoraremos ya que la representación es con 8 bits y transformando el resultado a base decimal nos resulta 40, el cual sería el resultado en base 10.
+        \end{enumerate}
+    \end{solution}
 \end{frame}
