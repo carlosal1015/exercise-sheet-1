@@ -192,23 +192,14 @@
 				      \end{tabular}
 			      \end{table}
 
-                Una vez realizada esa operación, la colocamos en nuestra suma principal, además, pondremos el signo de la magnitud m dándonos así lo siguiente:
+                Una vez realizada esa operación, la colocamos en nuestra suma principal, además, pondremos el signo de la magnitud más grande en el primer bit significativo, dándonos así lo siguiente:
 
                 \begin{table}[ht!]
 				      \begin{tabular}{>{$}c<{$} >{$}r<{$} >{$}l<{$} >{$}c<{$}}
 					        & \alert{1} & 1100111 & \left(-103\right) \\
-					      - & \alert{1} & 0111111 & \left(-63\right)  \\
+					      + & \alert{0} & 0111111 & \left(63\right)  \\
 					      \hline
-				      \end{tabular}
-				      \qquad
-				      \begin{math}
-					      \Longrightarrow
-				      \end{math}
-				      \qquad
-				      \begin{tabular}{>{$}c<{$} >{$}r<{$} >{$}l<{$} >{$}c<{$}}
-					        & \alert{1} & 1100111 & \left(-103\right) \\
-					      + & \alert{0} & 0111111 & \left(63\right)   \\
-					      \hline
+                        & \alert{1} & 1100111 & \left(-103\right) \\
 				      \end{tabular}
 			      \end{table}
 		\end{enumerate}
