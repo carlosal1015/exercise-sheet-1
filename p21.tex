@@ -16,50 +16,22 @@
 		      \end{enumerate}
 	\end{enumerate}
 
-	\begin{solution}
-		\begin{enumerate}[b)]
-			\item
+    \begin{solution}
+        Para realizar la aritmética de punto flotante de (a + b) + c, primero se deben normalizar 
+        \begin{align*}
+            a = 0.000063381158 = 0.63381158 \times 10^{-4}
+            b = 73.688329 = 0.73688329 \times 10^{2} 
+            c = -73.687711 = -0.73687711 \times 10^{2}
+        \end{align*}
+        Sumando a y b :
+        \begin{align*}
+            a + b = 0.63381158 \times 10^{-4} +  0.73688329 \times 10^{2}
+        \end{align*} 
+        Para sumar estos números, primero se ajustan los exponentes.
+        \begin{math}
+        
+        \end{math}
+    \end{solution}
+        
 
-			      \begin{equation*}
-				      \left(a+b\right)+c=
-			      \end{equation*}
-		\end{enumerate}
-
-		Considerando $\mathbb{F}\left(10,6,-5,5\right)$, entonces
-		\begin{math}
-			a=0.63381158\times 10^{-4}
-		\end{math},
-		\begin{math}
-			b=0.73688329\times 10^{2}
-		\end{math},
-		\begin{math}
-			c=-0.73687711\times 10^{2}
-		\end{math},
-		\begin{math}
-			\operatorname{fl}\left(a\right)=
-			0.633812\times 10^{-4}
-		\end{math},
-		\begin{math}
-			\operatorname{fl}\left(b\right)=
-			0.736883\times 10^{2}
-		\end{math},
-		\begin{math}
-			\operatorname{fl}\left(c\right)=
-			-0.736877\times 10^{2}
-		\end{math}
-
-		\begin{align*}
-			\operatorname{fl}\left(\operatorname{fl}\left(a\right)+\operatorname{fl}\left(b\right)\right)
-			 & =
-			0.736884\times 10^{2} \\
-			\operatorname{fl}\left(\operatorname{fl}\left(a\right)+\operatorname{fl}\left(b\right)\right)+
-			\operatorname{fl}\left(c\right)
-			 & =0.7\times 10^{-3} \\
-			\operatorname{fl}\left(\operatorname{fl}\left(\operatorname{fl}\left(a\right)+\operatorname{fl}\left(b\right)\right)+
-			\operatorname{fl}\left(c\right)\right)
-			 & =
-			0.7\times 10^{-3}
-		\end{align*}
-
-	\end{solution}
 \end{frame}
