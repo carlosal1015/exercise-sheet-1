@@ -181,28 +181,40 @@
 					      \hline
 				      \end{tabular}
 			      \end{table}
-                Realizaremos la resta de las cifras de la magnitud, dado que las cifras del primer bit significativo son distintas, para ello pondremos abajo la magnitud menor, es decir sin considerar el signo, y arriba la mayor, obteniendo así el siguiente resultado:
 
-                \begin{table}[ht!]
+			      Realizaremos la resta de las cifras de la magnitud, dado
+			      que las cifras del primer bit significativo son
+			      distintas, para ello pondremos abajo la magnitud menor,
+			      es decir sin considerar el signo, y arriba la mayor,
+			      obteniendo así el siguiente resultado:
+
+			      \begin{table}[ht!]
 				      \begin{tabular}{>{$}c<{$} >{$}c<{$}}
-					        & 1100111  \\
-					      - & 0111111  \\
+					        & 1100111 \\
+					      - & 0111111 \\
 					      \hline
 					        & 0101000
 				      \end{tabular}
 			      \end{table}
 
-                Una vez realizada esa operación, la colocamos en nuestra suma principal, además, pondremos el signo de la magnitud más grande en el primer bit significativo, dándonos así lo siguiente:
+			      Una vez realizada esa operación, la colocamos en nuestra
+			      suma principal, además, pondremos el signo de la magnitud
+			      más grande en el primer bit significativo, dándonos así
+			      lo siguiente:
 
-                \begin{table}[ht!]
+			      \begin{table}[ht!]
 				      \begin{tabular}{>{$}c<{$} >{$}r<{$} >{$}l<{$} >{$}c<{$}}
 					        & \alert{1} & 1100111 & \left(-103\right) \\
-					      + & \alert{0} & 0111111 & \left(63\right)  \\
+					      + & \alert{0} & 0111111 & \left(63\right)   \\
 					      \hline
-                            & \alert{1} & 0101000 & \left(-40\right) \\
+					        & \alert{1} & 0101000 & \left(-40\right)  \\
 				      \end{tabular}
 			      \end{table}
-                De la resta de A y B obtendremos el número binario 10101000 el cuál al transformarlo a base decimal sería -40, el mismo resultado que nos daría la operación de haberla realizado en base 10.
+
+			      De la resta de $A$ y $B$ obtendremos el número binario
+			      $10101000$ el cual al transformarlo a base decimal sería
+			      $-40$, el mismo resultado que nos daría la operación de
+			      haberla realizado en base $10$.
 		\end{enumerate}
 	\end{solution}
 \end{frame}
@@ -211,11 +223,14 @@
 	\begin{solution}
 		\begin{enumerate}[b)]
 			\item
-                En la representación complemento a 2, la conversión a decimal se hace similar a una conversión en números naturales, salvo que la primera cifra significativa se restará en vez de sumarse como las demás.
-                
-                Convertiremos el número $11100111_{(2)}$ a base 10.
+			      En la representación complemento a $2$, la conversión a
+			      decimal se hace similar a una conversión en números
+			      naturales, salvo que la primera cifra significativa se
+			      restará en vez de sumarse como las demás.
 
-                \begin{equation*}
+			      Convertiremos el número $11100111_{\left(2\right)}$ a base $10$.
+
+			      \begin{equation*}
 				      1\times 2^{0}+
 				      1\times2^{1}+
 				      1\times2^{2}+
@@ -223,57 +238,75 @@
 				      0\times2^{4}+
 				      1\times2^{5}+
 				      1\times2^{6}-
-                        1\times2^{7}=
+				      1\times2^{7}=
 				      -25
 			      \end{equation*}
 
-                Dándonos así que el valor en base $10$ del binario $A$ es
+			      Dándonos así que el valor en base $10$ del binario $A$ es
 			      $-25$.
 			      $A=-{25}_{\left(10\right)}$.
 
 			      De forma análoga para $B$, su valor en base $10$ es $-65$.
 			      $B=-{65}_{\left(10\right)}$.
 
-                Para calcular la suma de A y B se realizará como una suma normal de números en mismas bases, obteniendo el siguiente resultado:
+			      Para calcular la suma de $A$ y $B$ se realizará como una
+			      suma normal de números en mismas bases, obteniendo el
+			      siguiente resultado:
 
-                \begin{table}[]
-                    \begin{tabular}{c c c}
-                         & 11100111 & (-25)\\
-                        + & 10111111 & (-65)\\
-                        \hline
-                        & 10100110 & (-90)
-                    \end{tabular}
-                \end{table}
-                Con un Carry out=1, no ocurre overflow, ya que la primera cifra significativa del resultado, ignorando el Carry out, es igual a las otras 2, además, convirtiendo el resultado a base decimal nos resulta -90, tal cual como resultaría la suma en base 10.
-                               
+			      \begin{table}[ht!]
+				      \begin{tabular}{c c c}
+					        & 11100111 & (-25) \\
+					      + & 10111111 & (-65) \\
+					      \hline
+					        & 10100110 & (-90)
+				      \end{tabular}
+			      \end{table}
+			      Con un Carry out=1, no ocurre overflow, ya que la primera
+			      cifra significativa del resultado, ignorando el Carry
+			      out, es igual a las otras $2$, además, convirtiendo el
+			      resultado a base decimal nos resulta $-90$, tal cual como
+			      resultaría la suma en base $10$.
 		\end{enumerate}
 	\end{solution}
 \end{frame}
 
 \begin{frame}
-    \begin{solution}
-        \begin{enumerate}[b)]
-            \item 
-            
-                Para la resta de A y B se realizará como en el apartado A, es decir realizaremos A+(-B), transformaremos el binario B a -B, para ello, una de las formas de hacerlo es buscar de derecha a izquierda la primera cifra 1, y cambiar las cifras siguientes a esta, de forma que los 1 se vuelvan 0 y viceversa. Por último se suman las cifras como una suma normal en la misma base.
+	\begin{solution}
+		\begin{enumerate}[b)]
+			\item
 
-                \begin{table}[]
-                    \begin{tabular}{c c c}
-                         & 11100111 & (-25) \\
-                        - & 10111111 & (-65) \\
-                        \hline
-                    \end{tabular}
-                    \qquad
-                    \Longleftarrow
-                    \qquad
-                    \begin{tabular}{c c c}
-                         & 11100111 & (-25) \\
-                        + & 01000001 & (65) \\
-                        \hline
-                        & 00101000 & (40) \\
-                    \end{tabular}
-                \end{table}
-                De esta forma obtendremos la resta de A y B, en la cual tenemos un Carry out=1, el cual ignoraremos ya que la representación es con 8 bits y transformando el resultado a base decimal nos resulta 40, el cual sería el resultado en base 10.
-        \end{enumerate}
-    \end{solution}
+			      Para la resta de $A$ y $B$ se realizará como en el
+			      apartado $A$, es decir realizaremos $A+\left(-B\right)$,
+			      transformaremos el binario $B$ a $-B$, para ello, una de
+			      las formas de hacerlo es buscar de derecha a izquierda la
+			      primera cifra $1$, y cambiar las cifras siguientes a
+			      esta, de forma que los $1$ se vuelvan $0$ y viceversa.
+			      Por último, se suman las cifras como una suma normal en
+			      la misma base.
+
+			      \begin{table}[ht!]
+				      \begin{tabular}{c c c}
+					        & 11100111 & (-25) \\
+					      - & 10111111 & (-65) \\
+					      \hline
+				      \end{tabular}
+				      \qquad
+				      \begin{math}
+					      \Longleftarrow
+				      \end{math}
+				      \qquad
+				      \begin{tabular}{c c c}
+					        & 11100111 & (-25) \\
+					      + & 01000001 & (65)  \\
+					      \hline
+					        & 00101000 & (40)  \\
+				      \end{tabular}
+			      \end{table}
+			      De esta forma obtendremos la resta de $A$ y $B$, en la
+			      cual tenemos un Carry out=1, el cual ignoraremos ya que
+			      la representación es con $8$ bits y transformando el
+			      resultado a base decimal nos resulta $40$, el cual sería
+			      el resultado en base $10$.
+		\end{enumerate}
+	\end{solution}
 \end{frame}
