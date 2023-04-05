@@ -181,7 +181,7 @@
 					      \hline
 				      \end{tabular}
 			      \end{table}
-                Realizaremos la resta de las cifras de la magnitud, dado que las cifras del primer bit significativo son distintas, para ello pondremos abajo la magnitud menor, es decir sin considerar el signo
+                Realizaremos la resta de las cifras de la magnitud, dado que las cifras del primer bit significativo son distintas, para ello pondremos abajo la magnitud menor, es decir sin considerar el signo, y arriba la mayor, obteniendo así el siguiente resultado:
 
                 \begin{table}[ht!]
 				      \begin{tabular}{>{$}c<{$} >{$}c<{$}}
@@ -191,7 +191,26 @@
 					        & 0101000
 				      \end{tabular}
 			      \end{table}
-                
+
+                Una vez realizada esa operación, la colocamos en nuestra suma principal, además, pondremos el signo de la magnitud m dándonos así lo siguiente:
+
+                \begin{table}[ht!]
+				      \begin{tabular}{>{$}c<{$} >{$}r<{$} >{$}l<{$} >{$}c<{$}}
+					        & \alert{1} & 1100111 & \left(-103\right) \\
+					      - & \alert{1} & 0111111 & \left(-63\right)  \\
+					      \hline
+				      \end{tabular}
+				      \qquad
+				      \begin{math}
+					      \Longrightarrow
+				      \end{math}
+				      \qquad
+				      \begin{tabular}{>{$}c<{$} >{$}r<{$} >{$}l<{$} >{$}c<{$}}
+					        & \alert{1} & 1100111 & \left(-103\right) \\
+					      + & \alert{0} & 0111111 & \left(63\right)   \\
+					      \hline
+				      \end{tabular}
+			      \end{table}
 		\end{enumerate}
 	\end{solution}
 \end{frame}
