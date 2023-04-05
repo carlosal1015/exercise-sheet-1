@@ -102,23 +102,25 @@
 			      es $1$ y luego hay al menos otro $1$, el séptimo bit
 			      aumenta $1$:
 			      \begin{math}
-				      fl(N)=0.1\left(001001\right)_{2}\times
-				      2^{4}
+				      \operatorname{fl}\left(N\right)=
+				      0.1\left(001001\right)_{2}\times
+				      2^{4}.
 			      \end{math}
 
 			      Ahora añadimos a la representación el signo y el desplazamiento
-			      del exponente (-3):
+			      del exponente $\left(-3\right)$:
 
-			      \begin{math}
-				      fl(N)=
+			      \begin{equation*}
+				      \operatorname{fl}\left(N\right)=
 				      {\left(-1\right)}^{0}\times
 				      0.1\left(001001\right)_{\left(2\right)}\times
-				      2^{7-3}
-			      \end{math}
-
-			      Signo: 0
-			      Mantisa: 001001
-			      Exponente desplazado: 7 = $111_{2}$
+				      2^{7-3}.
+			      \end{equation*}
+			      \begin{align*}
+				      \text{Signo}                & :0.                       \\
+				      \text{Mantisa}              & : 001001.                 \\
+				      \text{Exponente desplazado} & : 7=111_{\left(2\right)}.
+			      \end{align*}
 
 			      Por lo tanto, una computadora con redondeo y punto flotante de
 			      $10$ bits, como se ha descrito, almacena el número $9.123$ de
@@ -134,9 +136,17 @@
 
 			\item
 
-                    $fl(N) = 1001.001 = 9.125$
-                    
-                    $ER(N) = \frac{|N-fl(N)|}{|N|} = \frac{9.125-9.123}{9.123} = \frac{0.002}{9.123} = 0.00022$
+
+			      \begin{align*}
+				      \operatorname{fl}\left(N\right) & =
+				      1001.001=9.125.                     \\
+				      \operatorname{ER}\left(N\right) & =
+				      \dfrac{\left|N-\operatorname{fl}\left(N\right)\right|}{\left|N\right|}=
+				      \dfrac{9.125-9.123}{9.123}=
+				      \dfrac{0.002}{9.123}=
+				      0.00022
+			      \end{align*}
+
 		\end{enumerate}
 	\end{solution}
 \end{frame}
