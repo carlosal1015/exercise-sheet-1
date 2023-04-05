@@ -73,7 +73,7 @@
 				      \end{column}
 			      \end{columns}
 
-			      Entonces,
+			      Entonces
 			      \begin{math}
 				      N=
 				      {1001.00011\dotsc}_{\left(2\right)}
@@ -95,14 +95,14 @@
 		\begin{enumerate}[a)]
 			\item
 
-			      Haremos el redondeo con ayuda de los paréntesis.
+			      Haremos el redondeo con ayuda de los paréntesis auxiliares.
 			      Estos separan los lugares de los seis bits que irán a la
 			      mantisa.
 			      Como el bit que sigue inmediatamente después del séptimo
 			      es $1$ y luego hay al menos otro $1$, el séptimo bit
 			      aumenta $1$:
 			      \begin{math}
-				      N=0.1\left(001001\right)_{2}\times
+				      fl(N)=0.1\left(001001\right)_{2}\times
 				      2^{4}
 			      \end{math}
 
@@ -110,7 +110,7 @@
 			      del exponente (-3):
 
 			      \begin{math}
-				      N=
+				      fl(N)=
 				      {\left(-1\right)}^{0}\times
 				      0.1\left(001001\right)_{\left(2\right)}\times
 				      2^{7-3}
@@ -134,7 +134,9 @@
 
 			\item
 
-			      .
+                    $fl(N) = 1001.001 = 9.125$
+                    
+                    $ER(N) = \frac{|N-fl(N)|}{|N|} = \frac{9.125-9.123}{9.123} = \frac{0.002}{9.123} = 0.00022$
 		\end{enumerate}
 	\end{solution}
 \end{frame}
